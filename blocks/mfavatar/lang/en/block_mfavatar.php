@@ -37,5 +37,12 @@ $string['flash:text_result_field'] = 'Your result';
 $string['flash:failed_saving'] = 'Error saving your snapshot!!';
 $string['flash:success_saving'] = 'Snapshot saved!!!';
 
+$string['failed:disableuserimages'] = 'Error: Site has disabeld user images';
+$string['failed'] = 'Error: Failed Uploading';
+$string['failed:sesskey'] = 'Error: failed saving you are still logged? Refresh the page and retry';
+$string['failed:permission_editownprofile'] = 'Error: User can\'t change there images';
+
+
+
 
 

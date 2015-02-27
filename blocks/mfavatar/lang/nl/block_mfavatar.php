@@ -37,4 +37,7 @@ $string['flash:text_result_field'] = 'Resultaat';
 $string['flash:failed_saving'] = 'Het is niet gelukt om snapshot op te slaan';
 $string['flash:success_saving'] = 'Snapshot is opgeslagen als uw avatar';
 
-
+$string['failed:disableuserimages'] = 'Fout: gebruikers afbeelding zijn uitgeschakeld op de site.';
+$string['failed'] = 'Fout: uploaden niet gelukt!';
+$string['failed:sesskey'] = 'Fout: bent u nog steeds ingelogd? Herlaad de pagina en probeer nogmaals.';
+$string['failed:permission_editownprofile'] = 'Fout: gebruikers kunnen hun afbeelding niet zelf bewerken.';
