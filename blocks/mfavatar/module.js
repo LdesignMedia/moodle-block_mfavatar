@@ -1,7 +1,11 @@
 /**
- * @Version: 0.0.1
- * @Author: Luuk Verhoeven
- * Copyright  Luuk Verhoeven
+ * adding the flash container to view page also this will try to update img.profilepic
+ *
+ * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ *
+ * @package block_mfavatar
+ * @copyright 2015 MoodleFreak.com
+ * @author Luuk Verhoeven
  **/
 M.block_mfavatar = {
     log  : function (val)
@@ -58,4 +62,4 @@ M.block_mfavatar = {
         this.log('Error!');
         this.log(err);
     }
-}
+};

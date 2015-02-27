@@ -17,17 +17,17 @@
 /**
  * snapshot view page
  *
- * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
- * @package block_mfavatar
+ * @package   block_mfavatar
  * @copyright 2015 MoodleFreak.com
- * @author Luuk Verhoeven
+ * @author    Luuk Verhoeven
  **/
 require_once(dirname(__FILE__) . '/../../config.php');
 require_once(dirname(__FILE__) . '/locallib.php');
 require_login();
 
-$courseid = required_param('courseid', PARAM_INT); //if no courseid is given
+$courseid = required_param('courseid', PARAM_INT); // if no courseid is given
 $parentcourse = $DB->get_record('course', array('id' => $courseid), '*', MUST_EXIST);
 
 $context = context_course::instance($courseid);
@@ -38,9 +38,8 @@ $PAGE->set_pagelayout('incourse');
 $PAGE->set_title(get_string('snapshotpage', 'block_mfavatar'));
 $PAGE->navbar->add(get_string('snapshotpage', 'block_mfavatar'));
 $PAGE->requires->css('/blocks/mfavatar/styles.css');
-//add need javascripts
-block_mfavatar_add_javascript_module();
 
+block_mfavatar_add_javascript_module();
 
 $renderer = $PAGE->get_renderer('block_mfavatar');
 

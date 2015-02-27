@@ -1,4 +1,4 @@
-MFavatar
+MFavatar Snapshot/Webcam tool for user profile picture
 
 Author: Luuk Verhoeven, MoodleFreak.com
 

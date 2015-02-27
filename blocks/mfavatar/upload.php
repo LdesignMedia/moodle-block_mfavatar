@@ -17,30 +17,27 @@
 /**
  * snapshot upload handler
  *
- * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
- * @package block_mfavatar
+ * @package   block_mfavatar
  * @copyright 2015 MoodleFreak.com
- * @author Luuk Verhoeven
+ * @author    Luuk Verhoeven
  **/
 define('NO_DEBUG_DISPLAY', true);
 
 require('../../config.php');
 require_once("$CFG->libdir/gdlib.php");
 
-try{
-    require_login(get_site() ,  true,  null,  true,  true);
-}
-catch (Exception $exc)
-{
+try {
+    require_login(get_site(), true, null, true, true);
+} catch (Exception $exc) {
     die('failed:login');
 }
 
 $file = required_param('file', PARAM_RAW);
 $sessionid = required_param('sesskey', PARAM_RAW);
 
-if (!confirm_sesskey($sessionid))
-{
+if (!confirm_sesskey($sessionid)) {
     die('failed:sesskey');
 }
 
@@ -48,16 +45,13 @@ $file = base64_decode($file);
 $context = context_user::instance($USER->id, MUST_EXIST);
 
 $tempfile = tempnam(sys_get_temp_dir(), 'mfavatar');
-file_put_contents($tempfile , $file);
+file_put_contents($tempfile, $file);
 
 $newpicture = (int)process_new_icon($context, 'user', 'icon', 0, $tempfile);
-if ($newpicture != $USER->picture)
-{
+if ($newpicture != $USER->picture) {
     $DB->set_field('user', 'picture', $newpicture, array('id' => $USER->id));
     echo 'success';
-}
-else
-{
+} else {
     echo 'failed';
 }
 

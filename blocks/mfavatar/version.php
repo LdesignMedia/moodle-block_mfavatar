@@ -17,11 +17,11 @@
 /**
  * Version information for mfavatar block
  *
- * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
- * @package block_mfavatar
+ * @package   block_mfavatar
  * @copyright 2015 MoodleFreak.com
- * @author Luuk Verhoeven
+ * @author    Luuk Verhoeven
  **/
 
 defined('MOODLE_INTERNAL') || die();

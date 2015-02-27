@@ -17,21 +17,20 @@
 /**
  * html render class
  *
- * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
- * @package block_mfavatar
+ * @package   block_mfavatar
  * @copyright 2015 MoodleFreak.com
- * @author Luuk Verhoeven
+ * @author    Luuk Verhoeven
  **/
-class block_mfavatar_renderer extends plugin_renderer_base
-{
+class block_mfavatar_renderer extends plugin_renderer_base {
+
     /**
      * add the snapshot tool
      * @return string
      * @throws coding_exception
      */
-    public function snapshot_tool()
-    {
+    public function snapshot_tool() {
         $html = '<div id="snapshotholder">
                     <div id="snapshot">
                         <h1>' . get_string('installflash', 'block_mfavatar') . '</h1>
@@ -39,7 +38,6 @@ class block_mfavatar_renderer extends plugin_renderer_base
                     </div>
                 </div>
                 ';
-
         return $html;
     }
 
