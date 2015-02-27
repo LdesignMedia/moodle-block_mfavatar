@@ -23,36 +23,53 @@
  * @copyright 2015 MoodleFreak.com
  * @author    Luuk Verhoeven
  **/
+
+if (!defined('AJAX_SCRIPT')) {
+    define('AJAX_SCRIPT', true);
+}
 define('NO_DEBUG_DISPLAY', true);
 
 require('../../config.php');
 require_once("$CFG->libdir/gdlib.php");
+$PAGE->set_url('/blocks/mfavatar/upload.php');
 
-try {
-    require_login(get_site(), true, null, true, true);
-} catch (Exception $exc) {
-    die('failed:login');
-}
-
+require_login(get_site(), true, null, true, true);
 $file = required_param('file', PARAM_RAW);
 $sessionid = required_param('sesskey', PARAM_RAW);
+$systemcontext = context_system::instance();
+$array = array('errors' => array(), 'status' => false);
 
-if (!confirm_sesskey($sessionid)) {
-    die('failed:sesskey');
+echo $OUTPUT->header(); // Send headers.
+
+if ($CFG->disableuserimages) {
+
+    $array['errors'][] = get_string('failed:disableuserimages', 'block_mfavatar');
+
+} elseif (!has_capability('moodle/user:editownprofile', $systemcontext)) {
+
+    $array['errors'][] = get_string('failed:permission_editownprofile', 'block_mfavatar');
+
+} elseif (!confirm_sesskey($sessionid)) {
+
+    $array['errors'][] = get_string('failed:sesskey', 'block_mfavatar');
 }
 
-$file = base64_decode($file);
-$context = context_user::instance($USER->id, MUST_EXIST);
+if(empty($array['errors'])) {
+    $file = base64_decode($file);
+    $context = context_user::instance($USER->id, MUST_EXIST);
 
-$tempfile = tempnam(sys_get_temp_dir(), 'mfavatar');
-file_put_contents($tempfile, $file);
+    $tempfile = tempnam(sys_get_temp_dir(), 'mfavatar');
+    file_put_contents($tempfile, $file);
 
-$newpicture = (int)process_new_icon($context, 'user', 'icon', 0, $tempfile);
-if ($newpicture != $USER->picture) {
-    $DB->set_field('user', 'picture', $newpicture, array('id' => $USER->id));
-    echo 'success';
-} else {
-    echo 'failed';
+    $newpicture = (int)process_new_icon($context, 'user', 'icon', 0, $tempfile);
+    if ($newpicture != $USER->picture) {
+        $DB->set_field('user', 'picture', $newpicture, array('id' => $USER->id));
+        $array['status'] = true;
+    } else {
+        $array['errors'][] = get_string('failed', 'block_mfavatar');
+    }
+
+    @unlink($tempfile);
 }
 
-@unlink($tempfile);
+echo json_encode($array);

@@ -8,7 +8,8 @@ import flash.utils.ByteArray;
 import com.adobe.images.JPGEncoder;
 import flash.display.MovieClip;
 import flash.display.Bitmap;
-import com.hurlant.util.Base64;import flash.net.URLLoader;
+import org.phprpc.util.Base64;
+import flash.net.URLLoader;
 import flash.net.URLRequest;
 import flash.net.URLVariables;
 import flash.events.IOErrorEvent;
@@ -155,7 +156,7 @@ function _btn1Click(e:MouseEvent):void
 function _upload():void
 {
     btn1.enable(false);
-    var b64result:String = Base64.encodeByteArray(encodedBytes);
+    var b64result:String = Base64.encode(encodedBytes);
     ul = new URLLoader();
 
     var v:URLVariables = new URLVariables();
@@ -177,7 +178,9 @@ function _upload():void
 
 function _snapshotSaved(e:Event):void
 {
-    if(ul.data == 'success')
+    var data:Object =  JSON.parse(ul.data);
+
+    if(data.status == true)
     {
         theText.text = success_saving;
         ExternalInterface.call("M.block_mfavatar.saved");
@@ -185,7 +188,22 @@ function _snapshotSaved(e:Event):void
     }
     else
     {
-        theText.text = failed_saving;
+        var error:String = failed_saving;
+        for (var s:String in data) {
+
+            if(s == "error")
+            {
+                error = data[s];
+                break;
+            }
+            else if(s == "errors")
+            {
+                error = data[s][0];
+                break;
+            }
+        }
+
+        theText.text = error;
         ExternalInterface.call("M.block_mfavatar.error" , ul.data);
     }
 }

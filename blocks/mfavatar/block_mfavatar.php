@@ -66,7 +66,8 @@ class block_mfavatar extends block_base {
             return $this->content;
         }
 
-        if ((!isloggedin() || isguestuser() || !has_capability('block/mfavatar:view', context_system::instance()))) {
+        $systemcontext = context_system::instance();
+        if ((!isloggedin() || isguestuser() || !has_capability('block/mfavatar:view', $systemcontext)) || !has_capability('moodle/user:editownprofile', $systemcontext) || $CFG->disableuserimages) {
             $this->content = new stdClass();
             $this->content->text = '';
 

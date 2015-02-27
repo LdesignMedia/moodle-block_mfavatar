@@ -44,5 +44,10 @@ block_mfavatar_add_javascript_module();
 $renderer = $PAGE->get_renderer('block_mfavatar');
 
 echo $OUTPUT->header();
+
+if ($CFG->disableuserimages) {
+    print_error("disableuserimages", 'block_mfavatar');
+}
+
 echo $renderer->snapshot_tool();
 echo $OUTPUT->footer();
