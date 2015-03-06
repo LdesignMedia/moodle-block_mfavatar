@@ -36,11 +36,14 @@ class block_mfavatar extends block_base {
     }
 
     function has_config() {
-        return true;
+        return false;
     }
 
     function applicable_formats() {
-        return array('my' => true);
+        return array(
+            'my' => true,
+            'all' => true,
+        );
     }
 
     function instance_allow_config() {

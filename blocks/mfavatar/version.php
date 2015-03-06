@@ -25,8 +25,8 @@
  **/
 
 defined('MOODLE_INTERNAL') || die();
-$plugin->release   = '1.0.1';
+$plugin->release   = '1.0.2';
 $plugin->maturity = MATURITY_BETA;
-$plugin->version   = 2015022700;        // The current plugin version (Date: YYYYMMDDXX)
+$plugin->version   = 2015030600;        // The current plugin version (Date: YYYYMMDDXX)
 $plugin->requires  = 2013101800;        // Requires this Moodle version
 $plugin->component = 'block_mfavatar'; // Full name of the plugin (used for diagnostics)
