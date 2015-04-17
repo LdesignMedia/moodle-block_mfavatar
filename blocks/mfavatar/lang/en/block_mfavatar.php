@@ -42,7 +42,8 @@ $string['failed'] = 'Error: Failed Uploading';
 $string['failed:sesskey'] = 'Error: failed saving you are still logged? Refresh the page and retry';
 $string['failed:permission_editownprofile'] = 'Error: User can\'t change their images';
 
-
+$string['pluginname_desc'] = 'Customize MoodleFreak avatar below.';
+$string['webrtc_enabled'] = 'WebRTC (modern) browser will support this';
 
 
 

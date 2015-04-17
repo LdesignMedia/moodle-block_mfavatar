@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Version information for mfavatar block
+ * settings
  *
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
@@ -23,10 +23,9 @@
  * @copyright 2015 MoodleFreak.com
  * @author    Luuk Verhoeven
  **/
-
 defined('MOODLE_INTERNAL') || die();
-$plugin->release   = '1.1.0';
-$plugin->maturity = MATURITY_STABLE;
-$plugin->version   = 2015041200;        // The current plugin version (Date: YYYYMMDDXX)
-$plugin->requires  = 2013101800;        // Requires this Moodle version
-$plugin->component = 'block_mfavatar'; // Full name of the plugin (used for diagnostics)
+
+if ($ADMIN->fulltree) {
+    $settings->add(new admin_setting_heading('block_mfavatar_settings', '', get_string('pluginname_desc', 'block_mfavatar')));
+    $settings->add(new admin_setting_configcheckbox('block_mfavatar/webrtc_enabled', get_string('webrtc_enabled', 'block_mfavatar'), '', 0));
+}

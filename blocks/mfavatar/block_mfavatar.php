@@ -36,7 +36,7 @@ class block_mfavatar extends block_base {
     }
 
     function has_config() {
-        return false;
+        return true;
     }
 
     function applicable_formats() {

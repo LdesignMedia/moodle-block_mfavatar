@@ -55,7 +55,21 @@ if ($CFG->disableuserimages) {
 }
 
 if(empty($array['errors'])) {
+
+    if(stristr($file , 'base64,' )){
+        //convert webrtc
+        $file =  explode('base64,',$file);
+        $file = end($file);
+    }
+
+    //decode
     $file = base64_decode($file);
+
+    if(empty($file)){
+        $array['errors'][] = get_string('failed', 'block_mfavatar');
+        die(json_encode($array));
+    }
+
     $context = context_user::instance($USER->id, MUST_EXIST);
 
     $tempfile = tempnam(sys_get_temp_dir(), 'mfavatar');

@@ -31,13 +31,15 @@ defined('MOODLE_INTERNAL') || die();
 function block_mfavatar_add_javascript_module() {
     global $PAGE, $CFG, $USER;
 
+    $config = get_config('block_mfavatar');
+
     // load swfobject 2.2
     $PAGE->requires->js(new moodle_url($CFG->wwwroot . '/blocks/mfavatar/js/swfobject.js'), true);
 
     $jsmodule = array(
         'name' => 'block_mfavatar',
         'fullpath' => '/blocks/mfavatar/module.js',
-        'requires' => array()
+        'requires' => array( 'io-base',)
     );
 
     $PAGE->requires->js_init_call('M.block_mfavatar.init', array(
@@ -52,6 +54,7 @@ function block_mfavatar_add_javascript_module() {
             'text_feed_field' => get_string('flash:text_feed_field', 'block_mfavatar'),
             'failed_saving' => get_string('flash:failed_saving', 'block_mfavatar'),
             'success_saving' => get_string('flash:success_saving', 'block_mfavatar'),
-        )
+        ),
+        $config->webrtc_enabled
     ), false, $jsmodule);
 }
