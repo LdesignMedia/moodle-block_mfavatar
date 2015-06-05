@@ -25,6 +25,8 @@
  **/
 $string['mfavatar:addinstance'] = 'Add a avatar snapshot tool';
 $string['mfavatar:myaddinstance'] = 'Add a new avatar snapshot block to My home';
+$string['mfavatar:view'] = 'View Mfavatar';
+
 $string['pluginname'] = 'MoodleFreak Avatar';
 $string['makesnapshot'] = 'Make Snapshot';
 $string['snapshotpage'] = 'Snapshot';
