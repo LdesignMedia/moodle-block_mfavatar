@@ -15,7 +15,8 @@ Besides this, there is also the facility to customize texts within the plugin.
 ## List of features
 - WebRTC, make snapshot with webcam. 
 - Flash, make snapshot with webcam. 
-- Feature for making automatically user avatars.
+- Feature for making automatically user avatars. Thanks to `laravolt/avatar`
+<!-- copy and paste. Modify height and width if desired. --> <a href="https://content.screencast.com/users/LuukVerhoeven/folders/Default/media/3cab1cd8-f5f0-448e-955d-ab8f3bc4cbb2/06.07.2018-18.36.png"><img class="embeddedObject" src="https://content.screencast.com/users/LuukVerhoeven/folders/Default/media/3cab1cd8-f5f0-448e-955d-ab8f3bc4cbb2/06.07.2018-18.36.png" width="500" border="0" /></a>
 
 ## Installation
 1.  Copy this plugin to the `block\mfavatar` folder on the server

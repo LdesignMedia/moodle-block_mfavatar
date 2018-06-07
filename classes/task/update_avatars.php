@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Tasks
+ * Task to generate avatars.
  *
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
@@ -23,15 +23,39 @@
  * @copyright 2018 MoodleFreak.com
  * @author    Luuk Verhoeven
  **/
-defined('MOODLE_INTERNAL') || die();
-$tasks = [
-    [
-        'classname' => 'block_mfavatar\task\update_avatars',
-        'blocking' => 0,
-        'minute' => '0',
-        'hour' => '1',
-        'day' => '*',
-        'month' => '*',
-        'dayofweek' => '*',
-    ],
-];
+
+namespace block_mfavatar\task;
+use block_mfavatar\avatargenerator;
+use core\task\scheduled_task;
+
+defined('MOODLE_INTERNAL') || die;
+
+class update_avatars extends scheduled_task {
+
+    /**
+     * @return string
+     * @throws \coding_exception
+     */
+    public function get_name() {
+        return get_string('task:update_avatars', 'block_mfavatar');
+    }
+
+    /**
+     * Do the job.
+     * Throw exceptions on errors (the job will be retried).
+     *
+     * @throws \dml_exception
+     */
+    public function execute() {
+
+        $enabled = get_config('block_mfavatar' , 'avatar_initials');
+        if(empty($enabled)){
+            return true;
+        }
+
+        $avatargenerator = new avatargenerator();
+        $avatargenerator->set_avatar_for_all_users();
+
+        return true;
+    }
+}

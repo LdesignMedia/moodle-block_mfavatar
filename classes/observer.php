@@ -33,10 +33,20 @@ class observer {
      * User updated
      *
      * @param \core\event\user_updated $event
+     *
+     * @throws \dml_exception
      */
     public static function user_updated(\core\event\user_updated $event) {
+
+        $enabled = get_config('block_mfavatar' , 'avatar_initials');
+        if(empty($enabled)){
+            return;
+        }
+
         // Check if we need to override there profile image.
-
+        if ($event->userid > 1){
+            $avatargenerator = new avatargenerator();
+            $avatargenerator->set_avatar_single_user(\core_user::get_user($event->userid));
+        }
     }
-
 }

@@ -42,10 +42,6 @@ $PAGE->requires->css('/blocks/mfavatar/styles.css');
 $renderer = $PAGE->get_renderer('block_mfavatar');
 $renderer->add_javascript_module();
 
-
-$test = new \block_mfavatar\avatargenerator();
-$test->set_avatar_for_all_users();
-
 echo $OUTPUT->header();
 
 if ($CFG->disableuserimages) {

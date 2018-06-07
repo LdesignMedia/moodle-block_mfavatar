@@ -108,20 +108,41 @@ class avatargenerator {
      *
      * @var bool
      */
-    protected $allowOverride = false;
+    protected $override_avatar = false;
 
     /**
      * avatargenerator constructor.
+     *
+     * @throws \dml_exception
      */
     public function __construct() {
         global $CFG;
         require_once __DIR__ . '/../vendor/autoload.php';
         require_once("$CFG->libdir/gdlib.php");
         $this->avatar = new Avatar($this->config);
+
+        $override = get_config(__NAMESPACE__ , 'avatar_initials_forced');
+        $this->override_avatar = !empty($override);
     }
 
     /**
-     * set_avatar_for_all_users
+     * Set new avatar for a single user.
+     *
+     * @param        $user
+     * @param string $parts
+     *
+     * @throws \dml_exception
+     */
+    public function set_avatar_single_user($user, $parts = 'fullname') {
+        switch ($parts) {
+            default:
+                // fullname.
+                $this->save($user,  $this->get_avatar(fullname($user)));
+        }
+    }
+
+    /**
+     * Set new avatar for all users.
      *
      * @param string $parts
      *
@@ -130,28 +151,29 @@ class avatargenerator {
     public function set_avatar_for_all_users($parts = 'fullname') {
 
         global $DB;
-        $rs = $DB->get_recordset('user');
+        $params = [];
 
-        foreach ($rs as $row) {
+        if (empty($this->override_avatar)) {
+            $params['picture'] = ''; // Must be empty.
+        }
 
-            switch ($parts) {
-                default:
-                    // fullname.
-                    $imageObject = $this->get_avatar(fullname($row));
-                    $this->save($row, $imageObject);
-            }
+        $rs = $DB->get_recordset('user', $params);
 
+        foreach ($rs as $user) {
+            $this->set_avatar_single_user($user, $parts);
         }
 
         $rs->close();
     }
 
     /**
+     * Get new avatar object.
+     *
      * @param $string
      *
      * @return Avatar
      */
-    private function get_avatar(string $string) : Avatar {
+    protected function get_avatar(string $string) : Avatar {
         return $this->avatar->create($string);
     }
 
@@ -163,7 +185,7 @@ class avatargenerator {
      *
      * @throws \dml_exception
      */
-    private function save(stdClass $user, Avatar $avatar) {
+    protected function save(stdClass $user, Avatar $avatar) {
         global $DB;
 
         $context = context_user::instance($user->id, MUST_EXIST);

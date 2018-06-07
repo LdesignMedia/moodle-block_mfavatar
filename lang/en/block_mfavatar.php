@@ -54,3 +54,4 @@ $string['avatar_initials_desc'] = 'Display unique avatar for any user based on t
 Uses the cron to and user update event to set user profile picture.';
 $string['avatar_initials_forced'] = 'Override user picture';
 $string['avatar_initials_forced_desc'] = 'If this is turned on the user pictures will overridden.';
+$string['task:update_avatars'] = 'Update user avatars';
