@@ -1,0 +1,23 @@
+#snapshotholder{
+    width: 100%;
+    height: 420px;
+}
+#snapshotholder_webrtc video{
+    width: 50%;
+    float: left;
+}
+#snapshotholder_webrtc hr{
+    clear: both;
+}
+#snapshotholder_webrtc #previewholder{
+    width: 50%;
+    float: left;
+    overflow: hidden;
+}
+#snapshotholder_webrtc #previewholder canvas#render {
+    display: none;
+}
+#snapshotholder_webrtc #previewholder canvas#preview {
+    width: 150px;
+    height: 150px;
+}
