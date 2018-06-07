@@ -47,5 +47,11 @@ $string['failed:permission_editownprofile'] = 'Error: User can\'t change their i
 $string['pluginname_desc'] = 'Customize MoodleFreak avatar below.';
 $string['webrtc_enabled'] = 'WebRTC (modern) browser will support this';
 
+$string['privacy:null_reason'] = 'No data collected by this plugin.';
 
-
+$string['avatar_initials'] = 'Initials avatars';
+$string['avatar_initials_desc'] = 'Display unique avatar for any user based on their (initials) name. 
+Uses the cron to and user update event to set user profile picture.';
+$string['avatar_initials_forced'] = 'Override user picture';
+$string['avatar_initials_forced_desc'] = 'If this is turned on the user pictures will overridden.';
+$string['task:update_avatars'] = 'Update user avatars';
