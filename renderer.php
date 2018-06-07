@@ -26,12 +26,54 @@
 class block_mfavatar_renderer extends plugin_renderer_base {
 
     /**
-     * add the snapshot tool
+     * add_javascript_module
+     *
+     * @throws coding_exception
+     * @throws dml_exception
+     * @throws moodle_exception
+     */
+    public function add_javascript_module() {
+        global $PAGE, $CFG, $USER;
+
+        $config = get_config('block_mfavatar');
+
+        // load swfobject 2.2
+        if (empty($config->webrtc_enabled)) {
+            $PAGE->requires->js(new moodle_url($CFG->wwwroot . '/blocks/mfavatar/js/swfobject.js'), true);
+        }
+
+        $jsmodule = [
+            'name' => 'block_mfavatar',
+            'fullpath' => '/blocks/mfavatar/module.js',
+            'requires' => ['io-base',],
+        ];
+
+        $PAGE->requires->js_init_call('M.block_mfavatar.init', [
+            $CFG->wwwroot . '/blocks/mfavatar/swf/snapshot.swf?' . time(),
+            $CFG->wwwroot . '/blocks/mfavatar/swf/expressInstall.swf',
+            [
+                'sessionid' => $USER->sesskey,
+                'uploadPath' => $CFG->wwwroot . '/blocks/mfavatar/ajax.php',
+                'text_select_device' => get_string('flash:textselectdevice', 'block_mfavatar'),
+                'text_make_snapshot' => get_string('flash:text_make_snapshot', 'block_mfavatar'),
+                'text_result_field' => get_string('flash:text_result_field', 'block_mfavatar'),
+                'text_feed_field' => get_string('flash:text_feed_field', 'block_mfavatar'),
+                'failed_saving' => get_string('flash:failed_saving', 'block_mfavatar'),
+                'success_saving' => get_string('flash:success_saving', 'block_mfavatar'),
+            ],
+            $config->webrtc_enabled,
+        ], false, $jsmodule);
+    }
+
+    /**
+     * Add the snapshot tool
      *
      * @return string
      * @throws coding_exception
      */
     public function snapshot_tool() {
+        // @TODO convert to mustache.
+
         $html = '<div id="snapshotholder" style="display: none;">
                     <div id="snapshot">
                         <h1>' . get_string('installflash', 'block_mfavatar') . '</h1>
@@ -39,7 +81,7 @@ class block_mfavatar_renderer extends plugin_renderer_base {
                     </div>
                 </div>';
 
-        //add webrtc container
+        // Add webrtc container.
         $html .= '<div id="snapshotholder_webrtc" style="display: none;">
                     <video autoplay></video>
                     <div id="previewholder">

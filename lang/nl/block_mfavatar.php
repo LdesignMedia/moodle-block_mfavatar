@@ -42,3 +42,4 @@ $string['failed:disableuserimages'] = 'Fout: gebruikers afbeelding zijn uitgesch
 $string['failed'] = 'Fout: uploaden niet gelukt!';
 $string['failed:sesskey'] = 'Fout: bent u nog steeds ingelogd? Herlaad de pagina en probeer nogmaals.';
 $string['failed:permission_editownprofile'] = 'Fout: gebruikers kunnen hun afbeelding niet zelf bewerken.';
+$string['privacy:null_reason'] = 'Er worden geen gegevens opgeslagen door deze plugin.';

@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * settings
+ * Settings
  *
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
@@ -26,6 +26,17 @@
 defined('MOODLE_INTERNAL') || die();
 
 if ($ADMIN->fulltree) {
-    $settings->add(new admin_setting_heading('block_mfavatar_settings', '', get_string('pluginname_desc', 'block_mfavatar')));
-    $settings->add(new admin_setting_configcheckbox('block_mfavatar/webrtc_enabled', get_string('webrtc_enabled', 'block_mfavatar'), '', 0));
+    $settings->add(new admin_setting_heading('block_mfavatar_settings', '',
+        get_string('pluginname_desc', 'block_mfavatar')));
+
+    $settings->add(new admin_setting_configcheckbox('block_mfavatar/webrtc_enabled',
+        get_string('webrtc_enabled', 'block_mfavatar'), '', 0));
+
+    $settings->add(new admin_setting_configcheckbox('block_mfavatar/avatar_initials',
+        get_string('avatar_initials', 'block_mfavatar'),
+        get_string('avatar_initials_desc', 'block_mfavatar'), 0));
+
+    $settings->add(new admin_setting_configcheckbox('block_mfavatar/avatar_initials_forced',
+        get_string('avatar_initials_forced', 'block_mfavatar'),
+        get_string('avatar_initials_forced_desc', 'block_mfavatar'), 0));
 }

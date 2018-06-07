@@ -79,7 +79,7 @@ class block_mfavatar extends block_base {
 
         $this->content = new stdClass();
         $this->content->text = '<div class="singlebutton">
-                                    <form action="' . $CFG->wwwroot . '/blocks/mfavatar/view.php" method="get">
+                                    <form action="' . $CFG->wwwroot . '/blocks/mfavatar/view/view.php" method="get">
                                       <div>
                                         <input type="hidden" name="blockid" value="' . $this->instance->id . '"/>
                                         <input type="hidden" name="courseid" value="' . $COURSE->id . '"/>

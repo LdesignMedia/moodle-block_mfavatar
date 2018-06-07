@@ -1,0 +1,17 @@
+{
+  "name": "moodlefreak/moodle-block_mfavatar",
+  "description": "MoodleFreak Plugin Avatar gives the user the possibility to take a snapshot with a live webcam. The user can then upload the picture and modify his profile picture at any time. ",
+  "license": "GNU General Public License",
+  "authors": [
+    {
+      "name": "Luuk Verhoeven",
+      "email": "luuk@moodlefreak.com",
+      "homepage": "https://moodlefreak.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "laravolt/avatar": "^2.0"
+  }
+}
