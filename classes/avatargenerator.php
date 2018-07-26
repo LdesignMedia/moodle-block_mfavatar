@@ -151,7 +151,9 @@ class avatargenerator {
     public function set_avatar_for_all_users($parts = 'fullname') {
 
         global $DB;
-        $params = [];
+        $params = [
+            'deleted' => 0,
+        ];
 
         if (empty($this->override_avatar)) {
             $params['picture'] = ''; // Must be empty.

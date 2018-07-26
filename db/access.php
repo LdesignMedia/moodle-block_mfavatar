@@ -35,7 +35,6 @@ $capabilities = [
         'clonepermissionsfrom' => 'moodle/my:manageblocks',
     ],
     'block/mfavatar:addinstance' => [
-        'riskbitmask' => RISK_SPAM | RISK_XSS,
         'captype' => 'write',
         'contextlevel' => CONTEXT_BLOCK,
         'archetypes' => [
@@ -45,7 +44,6 @@ $capabilities = [
         'clonepermissionsfrom' => 'moodle/site:manageblocks',
     ],
     'block/mfavatar:view' => [
-        'riskbitmask' => RISK_SPAM | RISK_XSS,
         'captype' => 'write',
         'contextlevel' => CONTEXT_BLOCK,
         'archetypes' => [
@@ -53,6 +51,6 @@ $capabilities = [
             'manager' => CAP_ALLOW,
             'user' => CAP_ALLOW,
         ],
-        'clonepermissionsfrom' => 'moodle/site:manageblocks',
+        'clonepermissionsfrom' => 'moodle/my:manageblocks'
     ],
 ];
