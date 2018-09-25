@@ -7,10 +7,10 @@
  | Release 3.0.1 |
  | Copyright by Team-PHPRPC |
  | |
- | WebSite: http://www.phprpc.org/ |
- | http://www.phprpc.net/ |
- | http://www.phprpc.com/ |
- | http://sourceforge.net/projects/php-rpc/ |
+ | WebSite: https://www.phprpc.org/ |
+ | https://www.phprpc.net/ |
+ | https://www.phprpc.com/ |
+ | https://sourceforge.net/projects/php-rpc/ |
  | |
  | Authors: Ma Bingyao <andot@ujn.edu.cn> |
  | |

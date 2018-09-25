@@ -101,7 +101,7 @@
             {
                 "name": "Daniel St. Jules",
                 "email": "danielst.jules@gmail.com",
-                "homepage": "http://www.danielstjules.com"
+                "homepage": "https://www.danielstjules.com"
             }
         ],
         "description": "A string manipulation library with multibyte support",
@@ -156,7 +156,7 @@
         "authors": [
             {
                 "name": "PHP-FIG",
-                "homepage": "http://www.php-fig.org/"
+                "homepage": "https://www.php-fig.org/"
             }
         ],
         "description": "Common interface for HTTP messages",
@@ -295,11 +295,11 @@
             {
                 "name": "Oliver Vogel",
                 "email": "oliver@olivervogel.com",
-                "homepage": "http://olivervogel.com/"
+                "homepage": "https://olivervogel.com/"
             }
         ],
         "description": "Image handling and manipulation library with support for Laravel integration",
-        "homepage": "http://image.intervention.io/",
+        "homepage": "https://image.intervention.io/",
         "keywords": [
             "gd",
             "image",
@@ -419,11 +419,11 @@
             {
                 "name": "Brian Nesbitt",
                 "email": "brian@nesbot.com",
-                "homepage": "http://nesbot.com"
+                "homepage": "https://nesbot.com"
             }
         ],
         "description": "A simple API extension for DateTime.",
-        "homepage": "http://carbon.nesbot.com",
+        "homepage": "https://carbon.nesbot.com",
         "keywords": [
             "date",
             "datetime",
@@ -468,7 +468,7 @@
         "authors": [
             {
                 "name": "PHP-FIG",
-                "homepage": "http://www.php-fig.org/"
+                "homepage": "https://www.php-fig.org/"
             }
         ],
         "description": "Common interfaces for simple caching",
@@ -518,7 +518,7 @@
         "authors": [
             {
                 "name": "PHP-FIG",
-                "homepage": "http://www.php-fig.org/"
+                "homepage": "https://www.php-fig.org/"
             }
         ],
         "description": "Common Container Interface (PHP FIG PSR-11)",
@@ -638,7 +638,7 @@
             }
         ],
         "description": "Common String Manipulations with regard to casing and singular/plural rules.",
-        "homepage": "http://www.doctrine-project.org",
+        "homepage": "https://www.doctrine-project.org",
         "keywords": [
             "inflection",
             "pluralize",
@@ -812,7 +812,7 @@
             {
                 "name": "Bayu Hendra Winata",
                 "email": "uyab.exe@gmail.com",
-                "homepage": "http://id-laravel.com",
+                "homepage": "https://id-laravel.com",
                 "role": "Developer"
             }
         ],

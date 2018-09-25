@@ -8,7 +8,7 @@
 [![PHP-Eye](https://php-eye.com/badge/nesbot/carbon/tested.svg?style=flat)](https://php-eye.com/package/nesbot/carbon)
 [![PHPStan](https://img.shields.io/badge/PHPStan-enabled-brightgreen.svg?style=flat)](https://github.com/phpstan/phpstan)
 
-A simple PHP API extension for DateTime. [http://carbon.nesbot.com](http://carbon.nesbot.com)
+A simple PHP API extension for DateTime. [https://carbon.nesbot.com](https://carbon.nesbot.com)
 
 ```php
 use Carbon\Carbon;
@@ -78,7 +78,7 @@ printf("Now: %s", Carbon::now());
 
 ### Without Composer
 
-Why are you not using [composer](http://getcomposer.org/)? Download [Carbon.php](https://github.com/briannesbitt/Carbon/blob/master/src/Carbon/Carbon.php) from the repo and save the file into your project path somewhere.
+Why are you not using [composer](https://getcomposer.org/)? Download [Carbon.php](https://github.com/briannesbitt/Carbon/blob/master/src/Carbon/Carbon.php) from the repo and save the file into your project path somewhere.
 
 ```php
 <?php
@@ -91,4 +91,4 @@ printf("Now: %s", Carbon::now());
 
 ## Docs
 
-[http://carbon.nesbot.com/docs](http://carbon.nesbot.com/docs)
+[https://carbon.nesbot.com/docs](https://carbon.nesbot.com/docs)

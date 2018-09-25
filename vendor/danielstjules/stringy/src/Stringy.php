@@ -481,7 +481,7 @@ class Stringy implements Countable, IteratorAggregate, ArrayAccess
     /**
      * Convert all HTML entities to their applicable characters. An alias of
      * html_entity_decode. For a list of flags, refer to
-     * http://php.net/manual/en/function.html-entity-decode.php
+     * https://php.net/manual/en/function.html-entity-decode.php
      *
      * @param  int|null $flags Optional flags
      * @return static   Object with the resulting $str after being html decoded.
@@ -495,7 +495,7 @@ class Stringy implements Countable, IteratorAggregate, ArrayAccess
 
     /**
      * Convert all applicable characters to HTML entities. An alias of
-     * htmlentities. Refer to http://php.net/manual/en/function.htmlentities.php
+     * htmlentities. Refer to https://php.net/manual/en/function.htmlentities.php
      * for a list of flags.
      *
      * @param  int|null $flags Optional flags
@@ -784,7 +784,7 @@ class Stringy implements Countable, IteratorAggregate, ArrayAccess
     public function longestCommonSubstring($otherStr)
     {
         // Uses dynamic programming to solve
-        // http://en.wikipedia.org/wiki/Longest_common_substring_problem
+        // https://en.wikipedia.org/wiki/Longest_common_substring_problem
         $encoding = $this->encoding;
         $stringy = static::create($this->str, $encoding);
         $strLength = $stringy->length();

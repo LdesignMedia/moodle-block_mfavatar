@@ -130,7 +130,7 @@ class XliffFileLoaderTest extends TestCase
     public function testLoadThrowsAnExceptionIfFileNotLocal()
     {
         $loader = new XliffFileLoader();
-        $resource = 'http://example.com/resources.xlf';
+        $resource = 'https://example.com/resources.xlf';
         $loader->load($resource, 'en', 'domain1');
     }
 

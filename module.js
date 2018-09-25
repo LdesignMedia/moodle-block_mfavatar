@@ -2,7 +2,7 @@
  * adding the flash container to view page also this will try to update img.profilepic
  * Added support for detecting webrtc most modern browser will support this
  *
- * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @license https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  * @package block_mfavatar
  * @copyright 2015 MoodleFreak.com
