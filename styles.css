@@ -11,6 +11,7 @@
 }
 #snapshotholder_webrtc #previewholder{
     width: 50%;
+    max-width:300px;
     float: left;
     overflow: hidden;
 }

@@ -73,6 +73,7 @@ class block_mfavatar_renderer extends plugin_renderer_base {
      */
     public function snapshot_tool() {
         // @TODO convert to mustache.
+        global $USER; // used for the profile link
 
         $html = '<div id="snapshotholder" style="display: none;">
                     <div id="snapshot">
@@ -91,7 +92,7 @@ class block_mfavatar_renderer extends plugin_renderer_base {
                  </div>
                  <div class="pt-3 clearboth">
                     <button id="snapshot" class="btn btn-primary">' . get_string('flash:text_make_snapshot', 'block_mfavatar') . '</button>
-                    <a href="/user/profile.php" class="btn btn-info">' . get_string('returntoprofile', 'block_mfavatar') . '</a>
+                    <a href="/user/profile.php?id=' . $USER->id . '" class="btn btn-info">' . get_string('returntoprofile', 'block_mfavatar') . '</a>
                  </div>';
 
         return $html;
