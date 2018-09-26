@@ -88,10 +88,11 @@ class block_mfavatar_renderer extends plugin_renderer_base {
                         <canvas id="render"></canvas>
                         <canvas id="preview"></canvas>
                     </div>
-                    <hr/>
+                 </div>
+                 <div class="pt-3 clearboth">
                     <button id="snapshot" class="btn btn-primary">' . get_string('flash:text_make_snapshot', 'block_mfavatar') . '</button>
-                    <hr/>
-                  </div>';
+                    <a href="/user/profile.php" class="btn btn-info">' . get_string('returntoprofile', 'block_mfavatar') . '</a>
+                 </div>';
 
         return $html;
     }

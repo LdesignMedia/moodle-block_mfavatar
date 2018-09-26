@@ -20,4 +20,8 @@
 #snapshotholder_webrtc #previewholder canvas#preview {
     width: 150px;
     height: 150px;
+    margin-left: 1rem;
+}
+.clearboth {
+    clear:both;
 }
