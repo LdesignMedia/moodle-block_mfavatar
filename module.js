@@ -112,9 +112,13 @@ M.block_mfavatar = {
 
             window.stream = stream; // make stream available to browser console
             if (window.URL){
-                video.src = window.URL.createObjectURL(stream);
-            }else{
-                video.src = stream;
+                try {
+                    video.srcObject = stream;
+                } catch {
+                    video.src = window.URL.createObjectURL(stream);
+                }
+            } else {
+                video.srcObject = stream;
             }
         }
 
