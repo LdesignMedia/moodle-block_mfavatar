@@ -83,7 +83,7 @@ class block_mfavatar extends block_base {
                                       <div>
                                         <input type="hidden" name="blockid" value="' . $this->instance->id . '"/>
                                         <input type="hidden" name="courseid" value="' . $COURSE->id . '"/>
-                                        <input class="singlebutton" type="submit" value="' . get_string('makesnapshot', 'block_mfavatar') . '"/>
+                                        <input class="singlebutton btn btn-primary" type="submit" value="' . get_string('makesnapshot', 'block_mfavatar') . '"/>
                                       </div>
                                     </form>
                                   </div>';

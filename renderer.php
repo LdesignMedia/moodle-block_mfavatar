@@ -89,7 +89,7 @@ class block_mfavatar_renderer extends plugin_renderer_base {
                         <canvas id="preview"></canvas>
                     </div>
                     <hr/>
-                    <button id="snapshot">' . get_string('flash:text_make_snapshot', 'block_mfavatar') . '</button>
+                    <button id="snapshot" class="btn btn-primary">' . get_string('flash:text_make_snapshot', 'block_mfavatar') . '</button>
                     <hr/>
                   </div>';
 
