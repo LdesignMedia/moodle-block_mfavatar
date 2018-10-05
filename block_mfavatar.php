@@ -40,10 +40,10 @@ class block_mfavatar extends block_base {
     }
 
     function applicable_formats() {
-        return array(
+        return [
             'my' => true,
             'all' => true,
-        );
+        ];
     }
 
     function instance_allow_config() {
@@ -52,7 +52,7 @@ class block_mfavatar extends block_base {
 
     function specialization() {
 
-        // load userdefined title and make sure it's never empty
+        // Load userdefined title and make sure it's never empty.
         if (empty($this->config->title)) {
             $this->title = get_string('pluginname', 'block_mfavatar');
         } else {
@@ -70,7 +70,8 @@ class block_mfavatar extends block_base {
         }
 
         $systemcontext = context_system::instance();
-        if ((!isloggedin() || isguestuser() || !has_capability('block/mfavatar:view', $systemcontext)) || !has_capability('moodle/user:editownprofile', $systemcontext) || $CFG->disableuserimages) {
+        if ((!isloggedin() || isguestuser() || !has_capability('block/mfavatar:view', $systemcontext)) ||
+            !has_capability('moodle/user:editownprofile', $systemcontext) || $CFG->disableuserimages) {
             $this->content = new stdClass();
             $this->content->text = '';
 

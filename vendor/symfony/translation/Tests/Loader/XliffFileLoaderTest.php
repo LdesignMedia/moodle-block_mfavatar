@@ -12,8 +12,8 @@
 namespace Symfony\Component\Translation\Tests\Loader;
 
 use PHPUnit\Framework\TestCase;
-use Symfony\Component\Translation\Loader\XliffFileLoader;
 use Symfony\Component\Config\Resource\FileResource;
+use Symfony\Component\Translation\Loader\XliffFileLoader;
 
 class XliffFileLoaderTest extends TestCase
 {
@@ -130,7 +130,7 @@ class XliffFileLoaderTest extends TestCase
     public function testLoadThrowsAnExceptionIfFileNotLocal()
     {
         $loader = new XliffFileLoader();
-        $resource = 'https://example.com/resources.xlf';
+        $resource = 'http://example.com/resources.xlf';
         $loader->load($resource, 'en', 'domain1');
     }
 

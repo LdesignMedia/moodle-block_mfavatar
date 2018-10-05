@@ -113,7 +113,7 @@ class avatargenerator {
     protected $override_avatar = false;
 
     /**
-     * avatargenerator constructor.
+     * Avatargenerator constructor.
      *
      * @throws \dml_exception
      */
@@ -138,7 +138,7 @@ class avatargenerator {
     public function set_avatar_single_user($user, $parts = 'fullname') {
         switch ($parts) {
             default:
-                // fullname.
+                // Fullname.
                 $this->save($user, $this->get_avatar(fullname($user)));
         }
     }

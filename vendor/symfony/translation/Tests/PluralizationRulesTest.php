@@ -15,13 +15,13 @@ use PHPUnit\Framework\TestCase;
 use Symfony\Component\Translation\PluralizationRules;
 
 /**
- * Test should cover all languages mentioned on https://translate.sourceforge.net/wiki/l10n/pluralforms
- * and Plural forms mentioned on https://www.gnu.org/software/gettext/manual/gettext.html#Plural-forms.
+ * Test should cover all languages mentioned on http://translate.sourceforge.net/wiki/l10n/pluralforms
+ * and Plural forms mentioned on http://www.gnu.org/software/gettext/manual/gettext.html#Plural-forms.
  *
  * See also https://developer.mozilla.org/en/Localization_and_Plurals which mentions 15 rules having a maximum of 6 forms.
  * The mozilla code is also interesting to check for.
  *
- * As mentioned by chx https://drupal.org/node/1273968 we can cover all by testing number from 0 to 199
+ * As mentioned by chx http://drupal.org/node/1273968 we can cover all by testing number from 0 to 199
  *
  * The goal to cover all languages is to far fetched so this test case is smaller.
  *
@@ -100,9 +100,9 @@ class PluralizationRulesTest extends TestCase
         foreach ($matrix as $langCode => $data) {
             $indexes = array_flip($data);
             if ($expectSuccess) {
-                $this->assertEquals($nplural, count($indexes), "Langcode '$langCode' has '$nplural' plural forms.");
+                $this->assertEquals($nplural, \count($indexes), "Langcode '$langCode' has '$nplural' plural forms.");
             } else {
-                $this->assertNotEquals((int) $nplural, count($indexes), "Langcode '$langCode' has '$nplural' plural forms.");
+                $this->assertNotEquals((int) $nplural, \count($indexes), "Langcode '$langCode' has '$nplural' plural forms.");
             }
         }
     }

@@ -31,7 +31,7 @@ use Symfony\Component\Translation\Exception\InvalidArgumentException;
  *
  * @author Fabien Potencier <fabien@symfony.com>
  *
- * @see    https://en.wikipedia.org/wiki/Interval_%28mathematics%29#The_ISO_notation
+ * @see    http://en.wikipedia.org/wiki/Interval_%28mathematics%29#The_ISO_notation
  */
 class Interval
 {

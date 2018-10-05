@@ -12,8 +12,8 @@
 namespace Symfony\Component\Translation\Tests\Loader;
 
 use PHPUnit\Framework\TestCase;
-use Symfony\Component\Translation\Loader\QtFileLoader;
 use Symfony\Component\Config\Resource\FileResource;
+use Symfony\Component\Translation\Loader\QtFileLoader;
 
 class QtFileLoaderTest extends TestCase
 {
@@ -44,7 +44,7 @@ class QtFileLoaderTest extends TestCase
     public function testLoadNonLocalResource()
     {
         $loader = new QtFileLoader();
-        $resource = 'https://domain1.com/resources.ts';
+        $resource = 'http://domain1.com/resources.ts';
         $loader->load($resource, 'en', 'domain1');
     }
 

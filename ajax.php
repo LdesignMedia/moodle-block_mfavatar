@@ -57,12 +57,12 @@ if ($CFG->disableuserimages) {
 if (empty($array['errors'])) {
 
     if (stristr($file, 'base64,')) {
-        //convert webrtc
+        // Convert webrtc.
         $file = explode('base64,', $file);
         $file = end($file);
     }
 
-    //decode
+    // Decode.
     $file = base64_decode($file);
 
     if (empty($file)) {

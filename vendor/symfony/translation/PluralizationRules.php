@@ -35,14 +35,14 @@ class PluralizationRules
             $locale = 'xbr';
         }
 
-        if (strlen($locale) > 3) {
-            $locale = substr($locale, 0, -strlen(strrchr($locale, '_')));
+        if (\strlen($locale) > 3) {
+            $locale = substr($locale, 0, -\strlen(strrchr($locale, '_')));
         }
 
         if (isset(self::$rules[$locale])) {
-            $return = call_user_func(self::$rules[$locale], $number);
+            $return = \call_user_func(self::$rules[$locale], $number);
 
-            if (!is_int($return) || $return < 0) {
+            if (!\is_int($return) || $return < 0) {
                 return 0;
             }
 
@@ -51,8 +51,8 @@ class PluralizationRules
 
         /*
          * The plural rules are derived from code of the Zend Framework (2010-09-25),
-         * which is subject to the new BSD license (https://framework.zend.com/license/new-bsd).
-         * Copyright (c) 2005-2010 Zend Technologies USA Inc. (https://www.zend.com)
+         * which is subject to the new BSD license (http://framework.zend.com/license/new-bsd).
+         * Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
          */
         switch ($locale) {
             case 'az':
@@ -144,6 +144,7 @@ class PluralizationRules
             case 'bs':
             case 'hr':
             case 'ru':
+            case 'sh':
             case 'sr':
             case 'uk':
                 return ((1 == $number % 10) && (11 != $number % 100)) ? 0 : ((($number % 10 >= 2) && ($number % 10 <= 4) && (($number % 100 < 10) || ($number % 100 >= 20))) ? 1 : 2);
@@ -200,8 +201,8 @@ class PluralizationRules
             $locale = 'xbr';
         }
 
-        if (strlen($locale) > 3) {
-            $locale = substr($locale, 0, -strlen(strrchr($locale, '_')));
+        if (\strlen($locale) > 3) {
+            $locale = substr($locale, 0, -\strlen(strrchr($locale, '_')));
         }
 
         self::$rules[$locale] = $rule;

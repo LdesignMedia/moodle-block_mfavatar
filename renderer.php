@@ -37,7 +37,7 @@ class block_mfavatar_renderer extends plugin_renderer_base {
 
         $config = get_config('block_mfavatar');
 
-        // load swfobject 2.2
+        // Load swfobject 2.2.
         if (empty($config->webrtc_enabled)) {
             $PAGE->requires->js(new moodle_url($CFG->wwwroot . '/blocks/mfavatar/js/swfobject.js'), true);
         }
@@ -72,8 +72,8 @@ class block_mfavatar_renderer extends plugin_renderer_base {
      * @throws coding_exception
      */
     public function snapshot_tool() {
-        // @TODO convert to mustache.
-        global $USER; // used for the profile link
+        // @TODO Convert to mustache.
+        global $USER; // Used for the profile link.
 
         $html = '<div id="snapshotholder" style="display: none;">
                     <div id="snapshot">

@@ -12,7 +12,7 @@
 namespace Symfony\Component\Translation\Extractor;
 
 /*
- * The following is derived from code at https://github.com/nikic/PHP-Parser
+ * The following is derived from code at http://github.com/nikic/PHP-Parser
  *
  * Copyright (c) 2011 by Nikita Popov
  *
@@ -89,7 +89,7 @@ class PhpStringTokenParser
      * Parses escape sequences in strings (all string types apart from single quoted).
      *
      * @param string      $str   String without quotes
-     * @param null|string $quote Quote type
+     * @param string|null $quote Quote type
      *
      * @return string String with escape sequences parsed
      */
@@ -113,9 +113,9 @@ class PhpStringTokenParser
         if (isset(self::$replacements[$str])) {
             return self::$replacements[$str];
         } elseif ('x' === $str[0] || 'X' === $str[0]) {
-            return chr(hexdec($str));
+            return \chr(hexdec($str));
         } else {
-            return chr(octdec($str));
+            return \chr(octdec($str));
         }
     }
 

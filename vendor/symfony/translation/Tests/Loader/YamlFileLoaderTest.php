@@ -12,8 +12,8 @@
 namespace Symfony\Component\Translation\Tests\Loader;
 
 use PHPUnit\Framework\TestCase;
-use Symfony\Component\Translation\Loader\YamlFileLoader;
 use Symfony\Component\Config\Resource\FileResource;
+use Symfony\Component\Translation\Loader\YamlFileLoader;
 
 class YamlFileLoaderTest extends TestCase
 {
@@ -55,7 +55,7 @@ class YamlFileLoaderTest extends TestCase
     public function testLoadThrowsAnExceptionIfFileNotLocal()
     {
         $loader = new YamlFileLoader();
-        $resource = 'https://example.com/resources.yml';
+        $resource = 'http://example.com/resources.yml';
         $loader->load($resource, 'en', 'domain1');
     }
 

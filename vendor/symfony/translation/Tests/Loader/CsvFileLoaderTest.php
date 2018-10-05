@@ -12,8 +12,8 @@
 namespace Symfony\Component\Translation\Tests\Loader;
 
 use PHPUnit\Framework\TestCase;
-use Symfony\Component\Translation\Loader\CsvFileLoader;
 use Symfony\Component\Config\Resource\FileResource;
+use Symfony\Component\Translation\Loader\CsvFileLoader;
 
 class CsvFileLoaderTest extends TestCase
 {
@@ -55,7 +55,7 @@ class CsvFileLoaderTest extends TestCase
     public function testLoadNonLocalResource()
     {
         $loader = new CsvFileLoader();
-        $resource = 'https://example.com/resources.csv';
+        $resource = 'http://example.com/resources.csv';
         $loader->load($resource, 'en', 'domain1');
     }
 }
