@@ -29,7 +29,8 @@ if (!defined('AJAX_SCRIPT')) {
 }
 define('NO_DEBUG_DISPLAY', true);
 
-require('../../config.php');
+require_once(dirname(__FILE__) . '/../../config.php');
+defined('MOODLE_INTERNAL') || die;
 defined('MOODLE_INTERNAL') || die;
 
 require_once("$CFG->libdir/gdlib.php");

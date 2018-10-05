@@ -15,7 +15,7 @@ M.block_mfavatar = {
      * Logging.
      * @param val
      */
-    log                : function (val) {
+    log: function (val) {
         try {
             console.log(val);
         } catch (e) {
@@ -32,14 +32,14 @@ M.block_mfavatar = {
      * @param flashvars
      * @param supportwebrtc
      */
-    init               : function (Y, applicationpath, expresspath, flashvars, supportwebrtc) {
+    init: function (Y, applicationpath, expresspath, flashvars, supportwebrtc) {
 
         supportwebrtc = (supportwebrtc == 1) ? true : false;
 
-        if(location.protocol != 'https:'){
+        if (location.protocol != 'https:') {
             alert('Microphone and Camera access no longer works on insecure origins. ' +
-            'To use this feature, you should consider switching your application to a secure origin, ' +
-            'such as HTTPS. See https://goo.gl/rStTGz for more details.');
+                'To use this feature, you should consider switching your application to a secure origin, ' +
+                'such as HTTPS. See https://goo.gl/rStTGz for more details.');
         }
 
         if (this.webrtc_is_supported() && supportwebrtc) {
@@ -78,7 +78,7 @@ M.block_mfavatar = {
      *
      * @param flashvars
      */
-    webrtc_load        : function (flashvars) {
+    webrtc_load: function (flashvars) {
         var snapshotButton = document.querySelector('button#snapshot');
         var video = window.video = document.querySelector('video');
         var canvasrender = window.canvas = document.querySelector('canvas#render');
@@ -101,7 +101,7 @@ M.block_mfavatar = {
 
             var data = canvasrender.toDataURL('image/png');
             YUI().use('io-base', function (Y) {
-                // saving the file
+                // Saving the file.
                 var cfg = {
                     method: 'POST',
                     data  : {
@@ -111,7 +111,7 @@ M.block_mfavatar = {
                 };
                 var request = Y.io(flashvars.uploadPath, cfg);
 
-                //on completed request
+                // On completed request.
                 Y.on('io:complete', onComplete, Y);
             });
         };
@@ -164,7 +164,7 @@ M.block_mfavatar = {
                 var json = JSON.parse(response.response);
 
                 if (json.status == true) {
-                    //reload profile picture
+                    // Reload profile picture.
                     M.block_mfavatar.saved();
                 }
                 M.block_mfavatar.log(json);
@@ -188,13 +188,13 @@ M.block_mfavatar = {
      */
     webrtc_is_supported: function () {
         return !!(navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia ||
-                 navigator.msGetUserMedia) && location.protocol == 'https:';
+            navigator.msGetUserMedia) && location.protocol == 'https:';
     },
 
     /**
      * Called when avatar is saved.
      */
-    saved              : function () {
+    saved: function () {
         this.log('Saved!!!');
         var profilePicture = Y.one('img.profilepic');
         if (profilePicture) {
@@ -212,7 +212,7 @@ M.block_mfavatar = {
      * Error message.
      * @param err
      */
-    error              : function (err) {
+    error: function (err) {
         M.block_mfavatar.log('Error!');
         M.block_mfavatar.log(err);
     }

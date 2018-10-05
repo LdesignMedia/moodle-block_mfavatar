@@ -31,7 +31,7 @@ class block_mfavatar extends block_base {
         $this->title = get_string('pluginname', 'block_mfavatar');
     }
 
-    public  function instance_allow_multiple() {
+    public function instance_allow_multiple() {
         return false;
     }
 
@@ -84,7 +84,8 @@ class block_mfavatar extends block_base {
                                       <div>
                                         <input type="hidden" name="blockid" value="' . $this->instance->id . '"/>
                                         <input type="hidden" name="courseid" value="' . $COURSE->id . '"/>
-                                        <input class="singlebutton btn btn-primary" type="submit" value="' . get_string('makesnapshot', 'block_mfavatar') . '"/>
+                                        <input class="singlebutton btn btn-primary" type="submit" value="' .
+                                          get_string('makesnapshot', 'block_mfavatar') . '"/>
                                       </div>
                                     </form>
                                   </div>';

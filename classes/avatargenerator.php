@@ -89,7 +89,7 @@ class avatargenerator {
         'border' => [
             'size' => 0,
 
-            // Properties: 'foreground','background','#aabbcc'.
+            // Sample: foreground,background,#aabbcc.
             'color' => 'foreground',
         ],
     ];

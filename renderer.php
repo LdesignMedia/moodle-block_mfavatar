@@ -23,6 +23,8 @@
  * @copyright 2015 MoodleFreak.com
  * @author    Luuk Verhoeven
  **/
+defined('MOODLE_INTERNAL') || die;
+
 class block_mfavatar_renderer extends plugin_renderer_base {
 
     /**
@@ -70,7 +72,7 @@ class block_mfavatar_renderer extends plugin_renderer_base {
      * @throws coding_exception
      */
     public function snapshot_tool() {
-        // @TODO Convert to mustache.
+        // TODO Convert to mustache.
         global $USER, $CFG; // Used for the profile link.
 
         $html = '<div id="snapshotholder" style="display: none;">
