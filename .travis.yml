@@ -26,7 +26,7 @@ env:
  global:
   - MOODLE_BRANCH=MOODLE_35_STABLE
   - IGNORE_PATHS=vendor
-  - IGNORE_NAMES=*.txt,moodle.css,moodle-rtl.css,moodle_min.css,editor.css,editor_min.css
+  - IGNORE_NAMES=*.txt,*.md
  matrix:
   - DB=pgsql
   - DB=mysqli
