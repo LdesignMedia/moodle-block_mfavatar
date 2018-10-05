@@ -25,7 +25,7 @@ php:
 env:
  global:
   - MOODLE_BRANCH=MOODLE_35_STABLE
-  - IGNORE_PATHS=vendor
+  - IGNORE_PATHS=vendor,source
   - IGNORE_NAMES=*.txt,*.md
  matrix:
   - DB=pgsql

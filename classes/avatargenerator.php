@@ -1,5 +1,5 @@
 <?php
-// This file is part of Moodle - https://moodle.org/
+// This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -12,7 +12,7 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
  *
@@ -36,13 +36,13 @@ use stdClass;
 class avatargenerator {
 
     protected $config = [
-        // Supported: "gd", "imagick"
+        // Supported: "gd", "imagick".
         'driver' => 'gd',
 
         // Initial generator class
         'generator' => \Laravolt\Avatar\Generator\DefaultGenerator::class,
 
-        // Whether all characters supplied must be replaced with their closest ASCII counterparts
+        // Whether all characters supplied must be replaced with their closest ASCII counterparts.
         'ascii' => true,
 
         // Image shape: circle or square
@@ -50,25 +50,25 @@ class avatargenerator {
         'width' => 100,
         'height' => 100,
 
-        // Number of characters used as initials. If name consists of single word, the first N character will be used
+        // Number of characters used as initials. If name consists of single word, the first N character will be used.
         'chars' => 2,
 
-        // font size
+        // Font size.
         'fontSize' => 48,
 
-        // convert initial letter to uppercase
+        // Convert initial letter to uppercase.
         'uppercase' => true,
 
         // Fonts used to render text.
-        // If contains more than one fonts, randomly selected based on name supplied
+        // If contains more than one fonts, randomly selected based on name supplied.
         'fonts' => [__DIR__ . '/../fonts/OpenSans-Bold.ttf'],
 
-        // List of foreground colors to be used, randomly selected based on name supplied
+        // List of foreground colors to be used, randomly selected based on name supplied.
         'foregrounds' => [
             '#FFFFFF',
         ],
 
-        // List of background colors to be used, randomly selected based on name supplied
+        // List of background colors to be used, randomly selected based on name supplied.
         'backgrounds' => [
             '#f44336',
             '#E91E63',
@@ -90,10 +90,12 @@ class avatargenerator {
         'border' => [
             'size' => 0,
 
-            // border color, available value are:
-            // 'foreground' (same as foreground color)
-            // 'background' (same as background color)
-            // or any valid hex ('#aabbcc')
+            /**
+             * Border color, available value are:
+             * 'foreground' (same as foreground color).
+             * 'background' (same as background color).
+             * Or any valid hex ('#aabbcc').
+             */
             'color' => 'foreground',
         ],
     ];
@@ -117,7 +119,7 @@ class avatargenerator {
      */
     public function __construct() {
         global $CFG;
-        require_once __DIR__ . '/../vendor/autoload.php';
+        require_once(__DIR__ . '/../vendor/autoload.php');
         require_once("$CFG->libdir/gdlib.php");
         $this->avatar = new Avatar($this->config);
 
@@ -192,7 +194,6 @@ class avatargenerator {
 
         $context = context_user::instance($user->id, MUST_EXIST);
 
-        //
         $tempfile = tempnam(sys_get_temp_dir(), 'mfavatar') . '.png';
 
         // Save to temp.
