@@ -25,10 +25,10 @@
  **/
 defined('MOODLE_INTERNAL') || die();
 $observers = [
-    array(
+    [
         'eventname' => '\core\event\user_updated',
         'callback' => '\block_mfavatar\observer::user_updated',
         'internal' => false, // This means that we get events only after transaction commit.
         'priority' => 1000,
-    ),
+    ],
 ];

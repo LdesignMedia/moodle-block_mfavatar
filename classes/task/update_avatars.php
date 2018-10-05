@@ -25,6 +25,7 @@
  **/
 
 namespace block_mfavatar\task;
+
 use block_mfavatar\avatargenerator;
 use core\task\scheduled_task;
 
@@ -48,8 +49,8 @@ class update_avatars extends scheduled_task {
      */
     public function execute() {
 
-        $enabled = get_config('block_mfavatar' , 'avatar_initials');
-        if(empty($enabled)){
+        $enabled = get_config('block_mfavatar', 'avatar_initials');
+        if (empty($enabled)) {
             return true;
         }
 

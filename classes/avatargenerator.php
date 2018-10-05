@@ -123,7 +123,7 @@ class avatargenerator {
         require_once("$CFG->libdir/gdlib.php");
         $this->avatar = new Avatar($this->config);
 
-        $override = get_config(__NAMESPACE__ , 'avatar_initials_forced');
+        $override = get_config(__NAMESPACE__, 'avatar_initials_forced');
         $this->override_avatar = !empty($override);
     }
 
@@ -139,7 +139,7 @@ class avatargenerator {
         switch ($parts) {
             default:
                 // fullname.
-                $this->save($user,  $this->get_avatar(fullname($user)));
+                $this->save($user, $this->get_avatar(fullname($user)));
         }
     }
 
