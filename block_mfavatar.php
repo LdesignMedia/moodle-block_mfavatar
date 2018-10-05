@@ -63,7 +63,7 @@ class block_mfavatar extends block_base {
     public function get_content() {
         global $CFG, $COURSE;
 
-        require_once $CFG->libdir . '/formslib.php';
+        require_once($CFG->libdir . '/formslib.php');
 
         if ($this->content !== null) {
             return $this->content;

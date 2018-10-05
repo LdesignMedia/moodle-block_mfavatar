@@ -24,13 +24,10 @@
  * @author    Luuk Verhoeven
  **/
 
-if (!defined('AJAX_SCRIPT')) {
-    define('AJAX_SCRIPT', true);
-}
+define('AJAX_SCRIPT', true);
 define('NO_DEBUG_DISPLAY', true);
 
-require_once(dirname(__FILE__) . '/../../config.php');
-defined('MOODLE_INTERNAL') || die;
+require_once(__DIR__ . '/../../config.php');
 defined('MOODLE_INTERNAL') || die;
 
 require_once("$CFG->libdir/gdlib.php");
