@@ -44,7 +44,7 @@ class PhpFileLoaderTest extends TestCase
     public function testLoadThrowsAnExceptionIfFileNotLocal()
     {
         $loader = new PhpFileLoader();
-        $resource = 'http://example.com/resources.php';
+        $resource = 'https://example.com/resources.php';
         $loader->load($resource, 'en', 'domain1');
     }
 }

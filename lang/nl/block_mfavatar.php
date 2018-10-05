@@ -1,5 +1,5 @@
 <?php
-// This file is part of Moodle - http://moodle.org/
+// This file is part of Moodle - https://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -12,12 +12,12 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
  * NL lang
  *
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @license   https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  * @package   block_mfavatar
  * @copyright 2015 MoodleFreak.com
@@ -43,3 +43,4 @@ $string['failed'] = 'Fout: uploaden niet gelukt!';
 $string['failed:sesskey'] = 'Fout: bent u nog steeds ingelogd? Herlaad de pagina en probeer nogmaals.';
 $string['failed:permission_editownprofile'] = 'Fout: gebruikers kunnen hun afbeelding niet zelf bewerken.';
 $string['privacy:null_reason'] = 'Er worden geen gegevens opgeslagen door deze plugin.';
+$string['returntoprofile'] = 'Keer terug naar je profiel';

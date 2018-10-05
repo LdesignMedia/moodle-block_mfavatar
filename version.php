@@ -1,5 +1,5 @@
 <?php
-// This file is part of Moodle - http://moodle.org/
+// This file is part of Moodle - https://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -12,12 +12,12 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
  * Version information for mfavatar block
  *
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @license   https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  * @package   block_mfavatar
  * @copyright 2015 MoodleFreak.com
@@ -25,8 +25,8 @@
  **/
 
 defined('MOODLE_INTERNAL') || die();
-$plugin->release   = '1.2.0';
+$plugin->release   = '1.2.1';
 $plugin->maturity = MATURITY_STABLE;
-$plugin->version   = 2018072600;        // The current plugin version (Date: YYYYMMDDXX)
+$plugin->version   = 2018092600;        // The current plugin version (Date: YYYYMMDDXX)
 $plugin->requires  = 2018051700;        // Requires this Moodle 3.5 version
 $plugin->component = 'block_mfavatar'; // Full name of the plugin (used for diagnostics)

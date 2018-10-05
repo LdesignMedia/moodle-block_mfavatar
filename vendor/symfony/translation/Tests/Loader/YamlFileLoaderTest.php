@@ -55,7 +55,7 @@ class YamlFileLoaderTest extends TestCase
     public function testLoadThrowsAnExceptionIfFileNotLocal()
     {
         $loader = new YamlFileLoader();
-        $resource = 'http://example.com/resources.yml';
+        $resource = 'https://example.com/resources.yml';
         $loader->load($resource, 'en', 'domain1');
     }
 

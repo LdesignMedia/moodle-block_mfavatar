@@ -1,4 +1,4 @@
-![Stringy](http://danielstjules.com/github/stringy-logo.png)
+![Stringy](https://danielstjules.com/github/stringy-logo.png)
 
 A PHP string manipulation library with multibyte support. Compatible with PHP
 5.4+, PHP 7+, and HHVM.
@@ -455,7 +455,7 @@ s('fòôbàř')->endsWithAny(['bàř', 'baz']); // true
 Ensures that the string begins with $substring. If it doesn't, it's prepended.
 
 ```php
-s('foobar')->ensureLeft('http://'); // 'http://foobar'
+s('foobar')->ensureLeft('https://'); // 'https://foobar'
 ```
 
 ##### ensureRight(string $substring)
@@ -502,7 +502,7 @@ s('fòôbàř')->hasUpperCase(); // false
 
 Convert all HTML entities to their applicable characters. An alias of
 html_entity_decode. For a list of flags, refer to
-http://php.net/manual/en/function.html-entity-decode.php
+https://php.net/manual/en/function.html-entity-decode.php
 
 ```php
 s('&amp;')->htmlDecode(); // '&'
@@ -511,7 +511,7 @@ s('&amp;')->htmlDecode(); // '&'
 ##### htmlEncode()
 
 Convert all applicable characters to HTML entities. An alias of
-htmlentities. Refer to http://php.net/manual/en/function.htmlentities.php
+htmlentities. Refer to https://php.net/manual/en/function.htmlentities.php
 for a list of flags.
 
 ```php
