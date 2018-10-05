@@ -29,7 +29,6 @@ namespace block_mfavatar;
 defined('MOODLE_INTERNAL') || die();
 
 use context_user;
-use Intervention\Image\Image;
 use Laravolt\Avatar\Avatar;
 use stdClass;
 
@@ -39,13 +38,13 @@ class avatargenerator {
         // Supported: "gd", "imagick".
         'driver' => 'gd',
 
-        // Initial generator class
+        // Initial generator class.
         'generator' => \Laravolt\Avatar\Generator\DefaultGenerator::class,
 
         // Whether all characters supplied must be replaced with their closest ASCII counterparts.
         'ascii' => true,
 
-        // Image shape: circle or square
+        // Image shape: circle or square.
         'shape' => 'circle',
         'width' => 100,
         'height' => 100,
@@ -90,12 +89,7 @@ class avatargenerator {
         'border' => [
             'size' => 0,
 
-            /**
-             * Border color, available value are:
-             * 'foreground' (same as foreground color).
-             * 'background' (same as background color).
-             * Or any valid hex ('#aabbcc').
-             */
+            // Properties: 'foreground','background','#aabbcc'.
             'color' => 'foreground',
         ],
     ];
@@ -110,7 +104,7 @@ class avatargenerator {
      *
      * @var bool
      */
-    protected $override_avatar = false;
+    protected $overrideavatar = false;
 
     /**
      * Avatargenerator constructor.
@@ -124,7 +118,7 @@ class avatargenerator {
         $this->avatar = new Avatar($this->config);
 
         $override = get_config(__NAMESPACE__, 'avatar_initials_forced');
-        $this->override_avatar = !empty($override);
+        $this->overrideavatar = !empty($override);
     }
 
     /**
@@ -157,7 +151,7 @@ class avatargenerator {
             'deleted' => 0,
         ];
 
-        if (empty($this->override_avatar)) {
+        if (empty($this->overrideavatar)) {
             $params['picture'] = ''; // Must be empty.
         }
 

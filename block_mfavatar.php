@@ -27,30 +27,30 @@ defined('MOODLE_INTERNAL') || die();
 
 class block_mfavatar extends block_base {
 
-    function init() {
+    public function init() {
         $this->title = get_string('pluginname', 'block_mfavatar');
     }
 
-    function instance_allow_multiple() {
+    public  function instance_allow_multiple() {
         return false;
     }
 
-    function has_config() {
+    public function has_config() {
         return true;
     }
 
-    function applicable_formats() {
+    public function applicable_formats() {
         return [
             'my' => true,
             'all' => true,
         ];
     }
 
-    function instance_allow_config() {
+    public function instance_allow_config() {
         return true;
     }
 
-    function specialization() {
+    public function specialization() {
 
         // Load userdefined title and make sure it's never empty.
         if (empty($this->config->title)) {
@@ -60,7 +60,7 @@ class block_mfavatar extends block_base {
         }
     }
 
-    function get_content() {
+    public function get_content() {
         global $CFG, $COURSE;
 
         require_once $CFG->libdir . '/formslib.php';

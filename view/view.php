@@ -26,7 +26,7 @@
 require_once(dirname(__FILE__) . '/../../../config.php');
 require_login();
 
-$courseid = required_param('courseid', PARAM_INT); // if no courseid is given
+$courseid = required_param('courseid', PARAM_INT);
 $parentcourse = $DB->get_record('course', ['id' => $courseid], '*', MUST_EXIST);
 
 $context = context_course::instance($courseid);
@@ -38,7 +38,7 @@ $PAGE->set_title(get_string('snapshotpage', 'block_mfavatar'));
 $PAGE->navbar->add(get_string('snapshotpage', 'block_mfavatar'));
 $PAGE->requires->css('/blocks/mfavatar/styles.css');
 
-/** @var block_mfavatar_renderer $renderer * */
+/** @var block_mfavatar_renderer $renderer **/
 $renderer = $PAGE->get_renderer('block_mfavatar');
 $renderer->add_javascript_module();
 
