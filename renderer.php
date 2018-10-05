@@ -37,10 +37,8 @@ class block_mfavatar_renderer extends plugin_renderer_base {
 
         $config = get_config('block_mfavatar');
 
-        // Load swfobject 2.2.
-        if (empty($config->webrtc_enabled)) {
-            $PAGE->requires->js(new moodle_url($CFG->wwwroot . '/blocks/mfavatar/js/swfobject.js'), true);
-        }
+        // Load swfobject 2.2 always fallback.
+        $PAGE->requires->js(new moodle_url($CFG->wwwroot . '/blocks/mfavatar/js/swfobject.js'), true);
 
         $jsmodule = [
             'name' => 'block_mfavatar',
@@ -73,7 +71,7 @@ class block_mfavatar_renderer extends plugin_renderer_base {
      */
     public function snapshot_tool() {
         // @TODO Convert to mustache.
-        global $USER; // Used for the profile link.
+        global $USER , $CFG; // Used for the profile link.
 
         $html = '<div id="snapshotholder" style="display: none;">
                     <div id="snapshot">
@@ -95,7 +93,7 @@ class block_mfavatar_renderer extends plugin_renderer_base {
                  <div class="pt-3 clearboth">
                     <button id="snapshot" class="btn btn-primary">' .
                         get_string('flash:text_make_snapshot', 'block_mfavatar') . '</button>
-                    <a href="/user/profile.php?id=' . $USER->id . '" class="btn btn-info">' .
+                    <a href="'.$CFG->wwwroot.'/user/profile.php?id=' . $USER->id . '" class="btn btn-info">' .
                         get_string('returntoprofile', 'block_mfavatar') . '</a>
                  </div>';
 

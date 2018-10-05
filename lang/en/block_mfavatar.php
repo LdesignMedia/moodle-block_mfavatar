@@ -23,6 +23,8 @@
  * @copyright 2015 MoodleFreak.com
  * @author    Luuk Verhoeven
  **/
+defined('MOODLE_INTERNAL') || die;
+
 $string['mfavatar:addinstance'] = 'Add a avatar snapshot tool';
 $string['mfavatar:myaddinstance'] = 'Add a new avatar snapshot block to My home';
 $string['mfavatar:view'] = 'View Mfavatar';

@@ -26,7 +26,7 @@
 
 namespace block_mfavatar;
 
-defined('MOODLE_INTERNAL') || die();
+defined('MOODLE_INTERNAL') || die;
 
 use context_user;
 use Laravolt\Avatar\Avatar;

@@ -23,6 +23,8 @@
  * @copyright 2015 MoodleFreak.com
  * @author    Luuk Verhoeven
  **/
+defined('MOODLE_INTERNAL') || die;
+
 $string['mfavatar:addinstance'] = 'Voeg avatar snapshot tool toe';
 $string['mfavatar:myaddinstance'] = 'Voeg een nieuwe avatar snapshot blok toe aan Mijn startpagina';
 $string['mfavatar:view'] = 'MoodleFreak Avatar weergeven';

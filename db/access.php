@@ -23,7 +23,7 @@
  * @copyright 2015 MoodleFreak.com
  * @author    Luuk Verhoeven
  **/
-defined('MOODLE_INTERNAL') || die();
+defined('MOODLE_INTERNAL') || die;
 
 $capabilities = [
     'block/mfavatar:myaddinstance' => [

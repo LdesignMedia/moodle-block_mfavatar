@@ -23,7 +23,7 @@
  * @copyright 2018 MoodleFreak.com
  * @author    Luuk Verhoeven
  **/
-defined('MOODLE_INTERNAL') || die();
+defined('MOODLE_INTERNAL') || die;
 $tasks = [
     [
         'classname' => 'block_mfavatar\task\update_avatars',

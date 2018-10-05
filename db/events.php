@@ -23,7 +23,7 @@
  * @copyright 2018 MoodleFreak.com
  * @author    Luuk Verhoeven
  **/
-defined('MOODLE_INTERNAL') || die();
+defined('MOODLE_INTERNAL') || die;
 $observers = [
     [
         'eventname' => '\core\event\user_updated',

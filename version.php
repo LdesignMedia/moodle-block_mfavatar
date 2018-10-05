@@ -24,7 +24,7 @@
  * @author    Luuk Verhoeven
  **/
 
-defined('MOODLE_INTERNAL') || die();
+defined('MOODLE_INTERNAL') || die;
 $plugin->release   = '1.2.1';
 $plugin->maturity = MATURITY_STABLE;
 $plugin->version   = 2018100502;        // The current plugin version (Date: YYYYMMDDXX).
