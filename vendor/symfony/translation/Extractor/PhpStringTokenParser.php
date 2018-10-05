@@ -12,7 +12,7 @@
 namespace Symfony\Component\Translation\Extractor;
 
 /*
- * The following is derived from code at http://github.com/nikic/PHP-Parser
+ * The following is derived from code at https://github.com/nikic/PHP-Parser
  *
  * Copyright (c) 2011 by Nikita Popov
  *

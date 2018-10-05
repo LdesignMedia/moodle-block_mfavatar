@@ -5,16 +5,16 @@
     OASIS Standard
     05 August 2014
     Copyright (c) OASIS Open 2014. All rights reserved.
-    Source: http://docs.oasis-open.org/xliff/xliff-core/v2.0/os/schemas/
+    Source: https://docs.oasis-open.org/xliff/xliff-core/v2.0/os/schemas/
      -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+<xs:schema xmlns:xs="https://www.w3.org/2001/XMLSchema"
     elementFormDefault="qualified"
     xmlns:xlf="urn:oasis:names:tc:xliff:document:2.0"
     targetNamespace="urn:oasis:names:tc:xliff:document:2.0">
 
   <!-- Import -->
 
-  <xs:import namespace="http://www.w3.org/XML/1998/namespace"
+  <xs:import namespace="https://www.w3.org/XML/1998/namespace"
       schemaLocation="informativeCopiesOf3rdPartySchemas/w3c/xml.xsd"/>
 
   <!-- Element Group -->

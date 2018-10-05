@@ -1,5 +1,5 @@
 <?php
-// This file is part of Moodle - http://moodle.org/
+// This file is part of Moodle - https://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -12,12 +12,12 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
  * EN lang
  *
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @license   https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  * @package   block_mfavatar
  * @copyright 2015 MoodleFreak.com
@@ -50,8 +50,9 @@ $string['webrtc_enabled'] = 'WebRTC (modern) browser will support this';
 $string['privacy:null_reason'] = 'No data collected by this plugin.';
 
 $string['avatar_initials'] = 'Initials avatars';
-$string['avatar_initials_desc'] = 'Display unique avatar for any user based on their (initials) name. 
+$string['avatar_initials_desc'] = 'Display unique avatar for any user based on their (initials) name.
 Uses the cron to and user update event to set user profile picture.';
 $string['avatar_initials_forced'] = 'Override user picture';
 $string['avatar_initials_forced_desc'] = 'If this is turned on the user pictures will overridden.';
 $string['task:update_avatars'] = 'Update user avatars';
+$string['returntoprofile'] = 'Return to your profile';

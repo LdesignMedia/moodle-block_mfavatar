@@ -14,7 +14,7 @@ namespace Symfony\Component\Translation\Loader;
 use Symfony\Component\Translation\Exception\InvalidResourceException;
 
 /**
- * @copyright Copyright (c) 2010, Union of RAD http://union-of-rad.org (http://lithify.me/)
+ * @copyright Copyright (c) 2010, Union of RAD https://union-of-rad.org (https://lithify.me/)
  */
 class MoFileLoader extends FileLoader
 {
