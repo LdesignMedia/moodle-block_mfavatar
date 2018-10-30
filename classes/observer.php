@@ -20,7 +20,7 @@
  * @license   https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  * @package   moodlefreak-block_mfavatar
- * @copyright 2018 MoodleFreak.com
+ * @copyright 2018 MFreak.nl
  * @author    Luuk Verhoeven
  **/
 

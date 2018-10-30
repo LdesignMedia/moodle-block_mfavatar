@@ -32,7 +32,7 @@ var ul:URLLoader;
 var mcSnapshot:MovieClip;
 var sessionid:String = "";
 var identity:String;
-var uploadPath:String = "https://moodle281.moodlefreak.com/blocks/mfavatar/upload.php";
+var uploadPath:String = "https://moodle281.MFreak.nl/blocks/mfavatar/upload.php";
 
 var text_select_device:String = "Please select your camera device and resolution here:";
 var text_make_snapshot:String = "Save snapshot";

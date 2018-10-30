@@ -4,9 +4,9 @@ In brief, the MoodleFreak Plugin Avatar gives the user the possibility to take a
 Besides this, there is also the facility to customize texts within the plugin.
 
 ## Author
-![MoodleFreak.com](https://moodlefreak.com/logo_small.png)
+![MFreak.nl](https://MFreak.nl/logo_small.png)
 
-* Author: Luuk Verhoeven, [MoodleFreak.com](https://www.moodlefreak.com/)
+* Author: Luuk Verhoeven, [MFreak.nl](https://www.MFreak.nl/)
 * Min. required: Moodle 3.5.x
 * Supports PHP: 7.0 | 7.1 | 7.2 
 
@@ -27,7 +27,7 @@ Besides this, there is also the facility to customize texts within the plugin.
 
 ## Security
 
-If you discover any security related issues, please email [luuk@moodlefreak.com](mailto:luuk@moodlefreak.com) instead of using the issue tracker.
+If you discover any security related issues, please email [luuk@MFreak.nl](mailto:luuk@MFreak.nl) instead of using the issue tracker.
 
 ## License
 
