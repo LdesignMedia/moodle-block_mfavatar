@@ -10,7 +10,7 @@ Besides this, there is also the facility to customize texts within the plugin.
 * Min. required: Moodle 3.5.x
 * Supports PHP: 7.0 | 7.1 | 7.2 
 
-[![Build Status](https://travis-ci.org/MFreakNL/moodle-block_mfavatar.svg?branch=moodle35)](https://travis-ci.org/MFreakNL/block_mfavatar)
+[![Build Status](https://travis-ci.org/MFreakNL/moodle-block_mfavatar.svg?branch=moodle35)](https://travis-ci.org/MFreakNL/moodle-block_mfavatar)
 
 ## List of features
 - WebRTC, make snapshot with webcam. 
