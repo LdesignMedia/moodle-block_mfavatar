@@ -25,6 +25,7 @@
  **/
 
 namespace block_mfavatar;
+
 defined('MOODLE_INTERNAL') || die;
 
 class observer {
@@ -38,15 +39,18 @@ class observer {
      */
     public static function user_updated(\core\event\user_updated $event) {
 
-        $enabled = get_config('block_mfavatar', 'avatar_initials');
-        if (empty($enabled)) {
+        if (empty(get_config('block_mfavatar', 'avatar_initials')) || empty($event->userid)) {
             return;
         }
 
-        // Check if we need to override there profile image.
-        if ($event->userid > 1) {
-            $avatargenerator = new avatargenerator();
-            $avatargenerator->set_avatar_single_user(\core_user::get_user($event->userid));
+        $user = \core_user::get_user($event->userid);
+
+        // Do not override profile images.
+        if (!empty($user->picture) && empty(get_config('block_mfavatar', 'avatar_initials_forced'))) {
+            return;
         }
+
+        $avatargenerator = new avatargenerator();
+        $avatargenerator->set_avatar_single_user($user);
     }
 }
