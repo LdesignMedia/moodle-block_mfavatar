@@ -19,7 +19,7 @@
  *
  * @license   https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
- * @package   moodlefreak-block_mfavatar
+ * @package   block_mfavatar
  * @copyright 2018 MFreak.nl
  * @author    Luuk Verhoeven
  **/
@@ -31,6 +31,14 @@ use core\task\scheduled_task;
 
 defined('MOODLE_INTERNAL') || die;
 
+/**
+ * Class update_avatars
+ *
+ * @package   block_mfavatar
+ * @license   https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @author    Luuk Verhoeven
+ *
+ */
 class update_avatars extends scheduled_task {
 
     /**

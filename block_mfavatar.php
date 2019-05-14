@@ -25,20 +25,43 @@
  **/
 defined('MOODLE_INTERNAL') || die;
 
+/**
+ * Class block_mfavatar
+ */
 class block_mfavatar extends block_base {
 
+    /**
+     * init
+     *
+     * @throws coding_exception
+     */
     public function init() {
         $this->title = get_string('pluginname', 'block_mfavatar');
     }
 
+    /**
+     * instance_allow_multiple
+     *
+     * @return bool
+     */
     public function instance_allow_multiple() {
         return false;
     }
 
+    /**
+     * has_config
+     *
+     * @return bool
+     */
     public function has_config() {
         return true;
     }
 
+    /**
+     * applicable_formats
+     *
+     * @return array
+     */
     public function applicable_formats() {
         return [
             'my' => true,
@@ -46,10 +69,20 @@ class block_mfavatar extends block_base {
         ];
     }
 
+    /**
+     * instance_allow_config
+     *
+     * @return bool
+     */
     public function instance_allow_config() {
         return true;
     }
 
+    /**
+     * specialization
+     *
+     * @throws coding_exception
+     */
     public function specialization() {
 
         // Load userdefined title and make sure it's never empty.
@@ -60,6 +93,13 @@ class block_mfavatar extends block_base {
         }
     }
 
+    /**
+     * get_content
+     *
+     * @return stdClass|stdObject
+     * @throws coding_exception
+     * @throws dml_exception
+     */
     public function get_content() {
         global $CFG, $COURSE;
 

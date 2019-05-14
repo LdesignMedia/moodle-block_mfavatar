@@ -19,7 +19,7 @@
  *
  * @license   https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
- * @package   moodlefreak-block_mfavatar
+ * @package   block_mfavatar
  * @copyright 2018 MFreak.nl
  * @author    Luuk Verhoeven
  **/
@@ -28,6 +28,13 @@ namespace block_mfavatar\privacy;
 
 defined('MOODLE_INTERNAL') || die;
 
+/**
+ * Class provider
+ *
+ * @package   block_mfavatar
+ * @license   https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @copyright 2018 MFreak.nl
+ */
 class provider implements \core_privacy\local\metadata\null_provider {
 
     /**

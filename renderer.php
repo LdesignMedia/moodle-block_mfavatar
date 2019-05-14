@@ -25,6 +25,9 @@
  **/
 defined('MOODLE_INTERNAL') || die;
 
+/**
+ * Class block_mfavatar_renderer
+ */
 class block_mfavatar_renderer extends plugin_renderer_base {
 
     /**

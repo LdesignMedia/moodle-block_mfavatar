@@ -19,7 +19,7 @@
  *
  * @license   https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
- * @package   moodlefreak-block_mfavatar
+ * @package  block_mfavatar
  * @copyright 2018 MFreak.nl
  * @author    Luuk Verhoeven
  **/
@@ -35,10 +35,15 @@ use stdClass;
 /**
  * Class avatargenerator
  *
- * @package block_mfavatar
+ * @package   block_mfavatar
+ * @license   https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @copyright 2018 MFreak.nl
  */
 class avatargenerator {
 
+    /**
+     * @var array
+     */
     protected $config = [
         // Supported: "gd", "imagick".
         'driver' => 'gd',
@@ -129,8 +134,8 @@ class avatargenerator {
     /**
      * Set new avatar for a single user.
      *
-     * @param        $user
-     * @param string $parts
+     * @param stdClass $user
+     * @param string   $parts
      *
      * @throws \dml_exception
      */
@@ -184,7 +189,7 @@ class avatargenerator {
      * Save user image.
      *
      * @param stdClass $user
-     * @param   Avatar $avatar
+     * @param Avatar   $avatar
      *
      * @throws \dml_exception
      */
