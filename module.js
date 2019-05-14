@@ -145,7 +145,7 @@ M.block_mfavatar = {
             if (window.URL) {
                 try {
                     video.srcObject = stream;
-                } catch {
+                } catch(e) {
                     video.src = window.URL.createObjectURL(stream);
                 }
             } else {

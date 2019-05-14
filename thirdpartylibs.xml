@@ -15,6 +15,13 @@
         <licenseversion></licenseversion>
     </library>
     <library>
+        <location>js/swfobject.js</location>
+        <name>swfobject.js</name>
+        <version>2.2</version>
+        <license>MIT</license>
+        <licenseversion></licenseversion>
+    </library>
+    <library>
         <location>source/</location>
         <name>Snapshot swf application</name>
         <version>1.0</version>
