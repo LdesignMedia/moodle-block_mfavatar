@@ -39,7 +39,3 @@ Contributions are welcome and will be fully credited. We accept contributions vi
 
 - 2018092600 Thanks for updating WEBRTC  @[eglescout](https://github.com/eglescout)
 - 2019051400 Thanks for solving issue in image override @[matasarei](https://github.com/matasarei)
-
-## Changelog
-
-See version control for the complete history. Major changes in this version will be listed below.
