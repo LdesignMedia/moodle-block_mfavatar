@@ -9,6 +9,7 @@ class ComposerStaticInitd5738815eb53bbcc1b0898f9cac5d494
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '72579e7bd17821bb1321b87411366eae' => __DIR__ . '/..' . '/illuminate/support/helpers.php',
+        '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         '65fec9ebcfbb3cbb4fd0d519687aea01' => __DIR__ . '/..' . '/danielstjules/stringy/src/Create.php',
     );
@@ -17,6 +18,7 @@ class ComposerStaticInitd5738815eb53bbcc1b0898f9cac5d494
         'S' => 
         array (
             'Symfony\\Polyfill\\Mbstring\\' => 26,
+            'Symfony\\Contracts\\' => 18,
             'Symfony\\Component\\Translation\\' => 30,
             'Stringy\\' => 8,
         ),
@@ -45,12 +47,20 @@ class ComposerStaticInitd5738815eb53bbcc1b0898f9cac5d494
         array (
             'Doctrine\\Common\\Inflector\\' => 26,
         ),
+        'C' => 
+        array (
+            'Carbon\\' => 7,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
+        ),
+        'Symfony\\Contracts\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/contracts',
         ),
         'Symfony\\Component\\Translation\\' => 
         array (
@@ -100,10 +110,10 @@ class ComposerStaticInitd5738815eb53bbcc1b0898f9cac5d494
         array (
             0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector',
         ),
-    );
-
-    public static $fallbackDirsPsr4 = array (
-        0 => __DIR__ . '/..' . '/nesbot/carbon/src',
+        'Carbon\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
+        ),
     );
 
     public static function getInitializer(ClassLoader $loader)
@@ -111,7 +121,6 @@ class ComposerStaticInitd5738815eb53bbcc1b0898f9cac5d494
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitd5738815eb53bbcc1b0898f9cac5d494::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitd5738815eb53bbcc1b0898f9cac5d494::$prefixDirsPsr4;
-            $loader->fallbackDirsPsr4 = ComposerStaticInitd5738815eb53bbcc1b0898f9cac5d494::$fallbackDirsPsr4;
 
         }, null, ClassLoader::class);
     }
