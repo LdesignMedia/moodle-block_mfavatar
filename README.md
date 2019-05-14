@@ -38,6 +38,7 @@ The GNU GENERAL PUBLIC LICENSE. Please see [License File](LICENSE) for more info
 Contributions are welcome and will be fully credited. We accept contributions via Pull Requests on Github.
 
 - 2018092600 Thanks for updating WEBRTC  @[eglescout](https://github.com/eglescout)
+- 2019051400 Thanks for finding issue in image override @[matasarei](https://github.com/matasarei)
 
 ## Changelog
 
