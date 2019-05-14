@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- *
+ * Generate avatars
  *
  * @license   https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
@@ -32,6 +32,11 @@ use context_user;
 use Laravolt\Avatar\Avatar;
 use stdClass;
 
+/**
+ * Class avatargenerator
+ *
+ * @package block_mfavatar
+ */
 class avatargenerator {
 
     protected $config = [
