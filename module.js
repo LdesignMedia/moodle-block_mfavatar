@@ -154,6 +154,7 @@ M.block_mfavatar = {
         }
 
         /**
+         * onComplete
          *
          * @param transactionid
          * @param response
