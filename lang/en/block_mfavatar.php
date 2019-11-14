@@ -17,12 +17,14 @@
 /**
  * EN lang
  *
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @license   https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  * @package   block_mfavatar
- * @copyright 2015 MoodleFreak.com
+ * @copyright 2015 MFreak.nl
  * @author    Luuk Verhoeven
  **/
+defined('MOODLE_INTERNAL') || die;
+
 $string['mfavatar:addinstance'] = 'Add a avatar snapshot tool';
 $string['mfavatar:myaddinstance'] = 'Add a new avatar snapshot block to My home';
 $string['mfavatar:view'] = 'View Mfavatar';
@@ -47,5 +49,12 @@ $string['failed:permission_editownprofile'] = 'Error: User can\'t change their i
 $string['pluginname_desc'] = 'Customize MoodleFreak avatar below.';
 $string['webrtc_enabled'] = 'WebRTC (modern) browser will support this';
 
+$string['privacy:null_reason'] = 'No data collected by this plugin.';
 
-
+$string['avatar_initials'] = 'Initials avatars';
+$string['avatar_initials_desc'] = 'Display unique avatar for any user based on their (initials) name.
+Uses the cron to and user update event to set user profile picture.';
+$string['avatar_initials_forced'] = 'Override user picture';
+$string['avatar_initials_forced_desc'] = 'If this is turned on the user pictures will overridden.';
+$string['task:update_avatars'] = 'Update user avatars';
+$string['returntoprofile'] = 'Return to your profile';

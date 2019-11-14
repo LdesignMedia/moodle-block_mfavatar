@@ -17,12 +17,14 @@
 /**
  * NL lang
  *
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @license   https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  * @package   block_mfavatar
- * @copyright 2015 MoodleFreak.com
+ * @copyright 2015 MFreak.nl
  * @author    Luuk Verhoeven
  **/
+defined('MOODLE_INTERNAL') || die;
+
 $string['mfavatar:addinstance'] = 'Voeg avatar snapshot tool toe';
 $string['mfavatar:myaddinstance'] = 'Voeg een nieuwe avatar snapshot blok toe aan Mijn startpagina';
 $string['mfavatar:view'] = 'MoodleFreak Avatar weergeven';
@@ -42,3 +44,5 @@ $string['failed:disableuserimages'] = 'Fout: gebruikers afbeelding zijn uitgesch
 $string['failed'] = 'Fout: uploaden niet gelukt!';
 $string['failed:sesskey'] = 'Fout: bent u nog steeds ingelogd? Herlaad de pagina en probeer nogmaals.';
 $string['failed:permission_editownprofile'] = 'Fout: gebruikers kunnen hun afbeelding niet zelf bewerken.';
+$string['privacy:null_reason'] = 'Er worden geen gegevens opgeslagen door deze plugin.';
+$string['returntoprofile'] = 'Keer terug naar je profiel';

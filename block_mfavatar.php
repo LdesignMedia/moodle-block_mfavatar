@@ -17,42 +17,75 @@
 /**
  * Snapshot block contains the button to go to snapshot view page
  *
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @license   https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  * @package   block_mfavatar
- * @copyright 2015 MoodleFreak.com
+ * @copyright 2015 MFreak.nl
  * @author    Luuk Verhoeven
  **/
-defined('MOODLE_INTERNAL') || die();
+defined('MOODLE_INTERNAL') || die;
 
+/**
+ * Class block_mfavatar
+ */
 class block_mfavatar extends block_base {
 
-    function init() {
+    /**
+     * init
+     *
+     * @throws coding_exception
+     */
+    public function init() {
         $this->title = get_string('pluginname', 'block_mfavatar');
     }
 
-    function instance_allow_multiple() {
+    /**
+     * instance_allow_multiple
+     *
+     * @return bool
+     */
+    public function instance_allow_multiple() {
         return false;
     }
 
-    function has_config() {
+    /**
+     * has_config
+     *
+     * @return bool
+     */
+    public function has_config() {
         return true;
     }
 
-    function applicable_formats() {
-        return array(
+    /**
+     * applicable_formats
+     *
+     * @return array
+     */
+    public function applicable_formats() {
+        return [
             'my' => true,
             'all' => true,
-        );
+        ];
     }
 
-    function instance_allow_config() {
+    /**
+     * instance_allow_config
+     *
+     * @return bool
+     */
+    public function instance_allow_config() {
         return true;
     }
 
-    function specialization() {
+    /**
+     * specialization
+     *
+     * @throws coding_exception
+     */
+    public function specialization() {
 
-        // load userdefined title and make sure it's never empty
+        // Load userdefined title and make sure it's never empty.
         if (empty($this->config->title)) {
             $this->title = get_string('pluginname', 'block_mfavatar');
         } else {
@@ -60,17 +93,25 @@ class block_mfavatar extends block_base {
         }
     }
 
-    function get_content() {
+    /**
+     * get_content
+     *
+     * @return stdClass|stdObject
+     * @throws coding_exception
+     * @throws dml_exception
+     */
+    public function get_content() {
         global $CFG, $COURSE;
 
-        require_once $CFG->libdir . '/formslib.php';
+        require_once($CFG->libdir . '/formslib.php');
 
         if ($this->content !== null) {
             return $this->content;
         }
 
         $systemcontext = context_system::instance();
-        if ((!isloggedin() || isguestuser() || !has_capability('block/mfavatar:view', $systemcontext)) || !has_capability('moodle/user:editownprofile', $systemcontext) || $CFG->disableuserimages) {
+        if ((!isloggedin() || isguestuser() || !has_capability('block/mfavatar:view', $systemcontext)) ||
+            !has_capability('moodle/user:editownprofile', $systemcontext) || $CFG->disableuserimages) {
             $this->content = new stdClass();
             $this->content->text = '';
 
@@ -79,11 +120,12 @@ class block_mfavatar extends block_base {
 
         $this->content = new stdClass();
         $this->content->text = '<div class="singlebutton">
-                                    <form action="' . $CFG->wwwroot . '/blocks/mfavatar/view.php" method="get">
+                                    <form action="' . $CFG->wwwroot . '/blocks/mfavatar/view/view.php" method="get">
                                       <div>
                                         <input type="hidden" name="blockid" value="' . $this->instance->id . '"/>
                                         <input type="hidden" name="courseid" value="' . $COURSE->id . '"/>
-                                        <input class="singlebutton" type="submit" value="' . get_string('makesnapshot', 'block_mfavatar') . '"/>
+                                        <input class="singlebutton btn btn-primary" type="submit" value="' .
+                                          get_string('makesnapshot', 'block_mfavatar') . '"/>
                                       </div>
                                     </form>
                                   </div>';

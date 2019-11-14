@@ -17,16 +17,16 @@
 /**
  * Version information for mfavatar block
  *
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @license   https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  * @package   block_mfavatar
- * @copyright 2015 MoodleFreak.com
+ * @copyright 2015 MFreak.nl
  * @author    Luuk Verhoeven
  **/
 
-defined('MOODLE_INTERNAL') || die();
-$plugin->release   = '1.1.0';
+defined('MOODLE_INTERNAL') || die;
+$plugin->release   = '3.8.0';
 $plugin->maturity = MATURITY_STABLE;
-$plugin->version   = 2017020800;        // The current plugin version (Date: YYYYMMDDXX)
-$plugin->requires  = 2013101800;        // Requires this Moodle version
-$plugin->component = 'block_mfavatar'; // Full name of the plugin (used for diagnostics)
+$plugin->version   = 2019111400;        // The current plugin version (Date: YYYYMMDDXX).
+$plugin->requires  = 2018051700;        // Requires this Moodle 3.5 version.
+$plugin->component = 'block_mfavatar'; // Full name of the plugin (used for diagnostics).
