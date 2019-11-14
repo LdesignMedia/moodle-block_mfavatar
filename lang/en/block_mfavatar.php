@@ -29,7 +29,7 @@ $string['mfavatar:addinstance'] = 'Add a avatar snapshot tool';
 $string['mfavatar:myaddinstance'] = 'Add a new avatar snapshot block to My home';
 $string['mfavatar:view'] = 'View Mfavatar';
 
-$string['pluginname'] = 'MoodleFreak Avatar';
+$string['pluginname'] = 'Mfreak Avatar';
 $string['makesnapshot'] = 'Make Snapshot';
 $string['snapshotpage'] = 'Snapshot';
 $string['installflash'] = 'Please install flash';
@@ -46,7 +46,7 @@ $string['failed'] = 'Error: Failed Uploading';
 $string['failed:sesskey'] = 'Error: failed saving you are still logged? Refresh the page and retry';
 $string['failed:permission_editownprofile'] = 'Error: User can\'t change their images';
 
-$string['pluginname_desc'] = 'Customize MoodleFreak avatar below.';
+$string['pluginname_desc'] = 'Customize Mfreak avatar below.';
 $string['webrtc_enabled'] = 'WebRTC (modern) browser will support this';
 
 $string['privacy:null_reason'] = 'No data collected by this plugin.';

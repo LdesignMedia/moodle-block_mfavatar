@@ -27,8 +27,8 @@ defined('MOODLE_INTERNAL') || die;
 
 $string['mfavatar:addinstance'] = 'Voeg avatar snapshot tool toe';
 $string['mfavatar:myaddinstance'] = 'Voeg een nieuwe avatar snapshot blok toe aan Mijn startpagina';
-$string['mfavatar:view'] = 'MoodleFreak Avatar weergeven';
-$string['pluginname'] = 'MoodleFreak Avatar';
+$string['mfavatar:view'] = 'Mfreak Avatar weergeven';
+$string['pluginname'] = 'Mfreak Avatar';
 $string['makesnapshot'] = 'Maak Snapshot';
 $string['snapshotpage'] = 'Snapshot';
 $string['installflash'] = 'Installeer flash';
