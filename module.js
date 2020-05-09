@@ -15,7 +15,7 @@ M.block_mfavatar = {
      * Logging.
      * @param val
      */
-    log: function (val) {
+    log: function(val) {
         try {
             console.log(val);
         } catch (e) {
@@ -29,12 +29,11 @@ M.block_mfavatar = {
      * @param Y
      * @param applicationpath
      * @param expresspath
-     * @param flashvars
+     * @param options
      * @param supportwebrtc
      */
-    init: function (Y, applicationpath, expresspath, flashvars, supportwebrtc) {
+    init: function(Y, applicationpath, expresspath, options) {
 
-        supportwebrtc = (supportwebrtc == 1) ? true : false;
 
         if (location.protocol != 'https:') {
             alert('Microphone and Camera access no longer works on insecure origins. ' +
@@ -42,49 +41,28 @@ M.block_mfavatar = {
                 'such as HTTPS. See https://goo.gl/rStTGz for more details.');
         }
 
-        if (this.webrtc_is_supported() && supportwebrtc) {
-
-            M.block_mfavatar.log('We have support for Webrtc');
-            Y.one('#snapshotholder_webrtc').setStyle('display', 'block');
-
-            this.webrtc_load(flashvars);
-        } else {
-            Y.one('#snapshot.btn').remove();
-
-            M.block_mfavatar.log('Default using flash for Webcam ');
-            Y.one('#snapshotholder').setStyle('display', 'block');
-
-            swfobject.embedSWF(
-                applicationpath,
-                "snapshot", "100%", "100%", "11.1.0",
-                expresspath,
-                flashvars, {
-                    menu             : "false",
-                    scale            : "noScale",
-                    allowFullscreen  : "true",
-                    allowScriptAccess: "always",
-                    wmode            : "transparent",
-                    bgcolor          : "#fff"
-                }, {
-                    id: "snapshot"
-                }, function (e) {
-                    // We are loaded?
-                    // this.log(e);
-                });
+        if (this.webrtc_is_supported() === false) {
+            alert('WebRTC is not supported');
+            return;
         }
+
+        M.block_mfavatar.log('We have support for Webrtc');
+        Y.one('#snapshotholder_webrtc').setStyle('display', 'block');
+
+        this.webrtc_load(options);
     },
 
     /**
      *
-     * @param flashvars
+     * @param options
      */
-    webrtc_load: function (flashvars) {
+    webrtc_load: function(options) {
         var snapshotButton = document.querySelector('button#snapshot');
         var video = window.video = document.querySelector('video');
         var canvasrender = window.canvas = document.querySelector('canvas#render');
         var canvaspreview = window.canvas = document.querySelector('canvas#preview');
 
-        snapshotButton.onclick = function () {
+        snapshotButton.onclick = function() {
             canvasrender.width = video.videoWidth;
             canvasrender.height = video.videoHeight;
 
@@ -100,16 +78,16 @@ M.block_mfavatar = {
             canvaspreview.getContext('2d').fillText("Saved!", canvas.width / 2, canvas.height / 2);
 
             var data = canvasrender.toDataURL('image/png');
-            YUI().use('io-base', function (Y) {
+            YUI().use('io-base', function(Y) {
                 // Saving the file.
                 var cfg = {
                     method: 'POST',
-                    data  : {
-                        'sesskey': flashvars.sessionid,
-                        'file'   : data
+                    data: {
+                        'sesskey': options.sessionid,
+                        'file': data
                     }
                 };
-                var request = Y.io(flashvars.uploadPath, cfg);
+                var request = Y.io(options.uploadPath, cfg);
 
                 // On completed request.
                 Y.on('io:complete', onComplete, Y);
@@ -119,19 +97,19 @@ M.block_mfavatar = {
         navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
 
         var constraints = {
-            audio  : false,
+            audio: false,
             "video": {
                 "mandatory": {
-                    "minWidth"      : "480",
-                    "minHeight"     : "480",
-                    "minFrameRate"  : "30",
+                    "minWidth": "480",
+                    "minHeight": "480",
+                    "minFrameRate": "30",
                     "minAspectRatio": "1",
-                    "maxWidth"      : "480",
-                    "maxHeight"     : "480",
-                    "maxFrameRate"  : "30",
+                    "maxWidth": "480",
+                    "maxHeight": "480",
+                    "maxFrameRate": "30",
                     "maxAspectRatio": "1"
                 },
-                "optional" : []
+                "optional": []
             }
         };
 
@@ -145,7 +123,7 @@ M.block_mfavatar = {
             if (window.URL) {
                 try {
                     video.srcObject = stream;
-                } catch(e) {
+                } catch (e) {
                     video.src = window.URL.createObjectURL(stream);
                 }
             } else {
@@ -187,7 +165,7 @@ M.block_mfavatar = {
      *
      * @returns {boolean}
      */
-    webrtc_is_supported: function () {
+    webrtc_is_supported: function() {
         return !!(navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia ||
             navigator.msGetUserMedia) && location.protocol == 'https:';
     },
@@ -195,13 +173,13 @@ M.block_mfavatar = {
     /**
      * Called when avatar is saved.
      */
-    saved: function () {
+    saved: function() {
         this.log('Saved!!!');
         var profilePicture = Y.one('img.profilepic');
         if (profilePicture) {
             var src = profilePicture.getAttribute('src');
             profilePicture.setAttribute('src', '');
-            setTimeout(function () {
+            setTimeout(function() {
                 var now = new Date().getTime() / 1000;
                 profilePicture.setAttribute('src', src + '&c=' + now);
             }, 500);
@@ -213,7 +191,7 @@ M.block_mfavatar = {
      * Error message.
      * @param err
      */
-    error: function (err) {
+    error: function(err) {
         M.block_mfavatar.log('Error!');
         M.block_mfavatar.log(err);
     }

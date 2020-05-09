@@ -8,7 +8,7 @@ Besides this, there is also the facility to customize texts within the plugin.
 
 * Author: Luuk Verhoeven, [MFreak.nl](https://www.MFreak.nl/)
 * Min. required: Moodle 3.5.x
-* Supports PHP: 7.0 | 7.1 | 7.2 
+* Supports PHP: 7.2 
 
 [![Build Status](https://travis-ci.org/MFreakNL/moodle-block_mfavatar.svg?branch=moodle35)](https://travis-ci.org/MFreakNL/moodle-block_mfavatar)
 
@@ -37,5 +37,6 @@ The GNU GENERAL PUBLIC LICENSE. Please see [License File](LICENSE) for more info
 
 Contributions are welcome and will be fully credited. We accept contributions via Pull Requests on Github.
 
+- 2020050900 Using WEBRTC as default, deprecating flash.
 - 2018092600 Thanks for updating WEBRTC  @[eglescout](https://github.com/eglescout)
 - 2019051400 Thanks for solving issue in image override @[matasarei](https://github.com/matasarei)

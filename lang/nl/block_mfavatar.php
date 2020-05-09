@@ -29,7 +29,7 @@ $string['mfavatar:addinstance'] = 'Voeg avatar snapshot tool toe';
 $string['mfavatar:myaddinstance'] = 'Voeg een nieuwe avatar snapshot blok toe aan Mijn startpagina';
 $string['mfavatar:view'] = 'Mfreak Avatar weergeven';
 $string['pluginname'] = 'Mfreak Avatar';
-$string['makesnapshot'] = 'Maak Snapshot';
+$string['makesnapshot'] = 'Maak een webcam snapshot';
 $string['snapshotpage'] = 'Snapshot';
 $string['installflash'] = 'Installeer flash';
 

@@ -47,7 +47,6 @@ $string['failed:sesskey'] = 'Error: failed saving you are still logged? Refresh 
 $string['failed:permission_editownprofile'] = 'Error: User can\'t change their images';
 
 $string['pluginname_desc'] = 'Customize Mfreak avatar below.';
-$string['webrtc_enabled'] = 'WebRTC (modern) browser will support this';
 
 $string['privacy:null_reason'] = 'No data collected by this plugin.';
 

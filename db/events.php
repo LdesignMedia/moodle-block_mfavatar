@@ -19,7 +19,7 @@
  *
  * @license   https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
- * @package  block_mfavatar
+ * @package   block_mfavatar
  * @copyright 2018 MFreak.nl
  * @author    Luuk Verhoeven
  **/
