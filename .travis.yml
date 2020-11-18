@@ -29,9 +29,8 @@ before_install:
   - nvm install 14 # moodle-plugin-ci still uses 8.9, but Moodle core switched to 14 in MDL-66109.
   - nvm use 14
   - cd ../..
-  - composer create-project -n --no-dev --prefer-dist blackboard-open-source/moodle-plugin-ci ci dev-master
+  - composer create-project -n --no-dev --repository-url=packages.json --prefer-dist blackboard-open-source/moodle-plugin-ci ci dev-master
   - export PATH="$(cd ci/bin; pwd):$(cd ci/vendor/bin; pwd):$PATH"
-  - pwd
   #- docker run -d -p 127.0.0.1:4444:4444 --net=host -v /dev/shm:/dev/shm selenium/standalone-chrome:3
 
 install:
