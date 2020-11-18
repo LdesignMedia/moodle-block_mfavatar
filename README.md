@@ -1,7 +1,6 @@
 ## Moodle MFavatar Snapshot/Webcam tool for user profile picture
 
-Briefly, the Mfreak Plugin Avatar gives the user the possibility to take a snapshot with a live webcam. The user can then upload the picture and modify his profile picture at any time. 
-Besides this, there is also the facility to customize texts within the plugin.
+Briefly, the Mfreak Plugin Avatar gives the user the possibility to take a snapshot with a live webcam. The user can then upload the picture and modify his profile picture at any time. Besides this, there is also the facility to auto generate Avatars. 
 
 ## Author
 ![MFreak.nl](https://MFreak.nl/logo_small.png)
