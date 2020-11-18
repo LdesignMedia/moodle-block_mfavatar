@@ -28,6 +28,15 @@ namespace block_mfavatar;
 
 defined('MOODLE_INTERNAL') || die;
 
+/**
+ * Class observer
+ *
+ * @license   https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ *
+ * @package   block_mfavatar
+ * @copyright 2018 MFreak.nl
+ * @author    Luuk Verhoeven
+ */
 class observer {
 
     /**
@@ -37,7 +46,7 @@ class observer {
      *
      * @throws \dml_exception
      */
-    public static function user_updated(\core\event\user_updated $event) {
+    public static function user_updated(\core\event\user_updated $event) : void {
 
         if (empty(get_config('block_mfavatar', 'avatar_initials')) || empty($event->userid)) {
             return;
