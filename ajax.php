@@ -72,13 +72,18 @@ if (empty($array['errors'])) {
 
     $context = context_user::instance($USER->id, MUST_EXIST);
 
-    $tempfile = tempnam(sys_get_temp_dir(), 'mfavatar');
+    $tempfile = tempnam($CFG->tempdir, 'mfavatar');
     file_put_contents($tempfile, $file);
 
     $newpicture = (int)process_new_icon($context, 'user', 'icon', 0, $tempfile);
     if ($newpicture != $USER->picture) {
+        $USER->picture = $newpicture;
+
         $DB->set_field('user', 'picture', $newpicture, ['id' => $USER->id]);
         $array['status'] = true;
+
+        $userpicture = new \user_picture($USER);
+        $array['img'] = $userpicture->get_url($PAGE)->out(false);
     } else {
         $array['errors'][] = get_string('failed', 'block_mfavatar');
     }

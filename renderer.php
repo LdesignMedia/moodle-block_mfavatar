@@ -27,6 +27,12 @@ defined('MOODLE_INTERNAL') || die;
 
 /**
  * Class block_mfavatar_renderer
+ *
+ * @license   https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ *
+ * @package   block_mfavatar
+ * @copyright 2015 MFreak.nl
+ * @author    Luuk Verhoeven
  */
 class block_mfavatar_renderer extends plugin_renderer_base {
 
@@ -37,13 +43,8 @@ class block_mfavatar_renderer extends plugin_renderer_base {
      * @throws dml_exception
      * @throws moodle_exception
      */
-    public function add_javascript_module() {
-        global $PAGE, $CFG, $USER;
-
-        $config = get_config('block_mfavatar');
-
-        // Load swfobject 2.2 always fallback.
-        $PAGE->requires->js(new moodle_url($CFG->wwwroot . '/blocks/mfavatar/js/swfobject.js'), true);
+    public function add_javascript_module() : void {
+        global $CFG, $USER;
 
         $jsmodule = [
             'name' => 'block_mfavatar',
@@ -51,9 +52,7 @@ class block_mfavatar_renderer extends plugin_renderer_base {
             'requires' => ['io-base'],
         ];
 
-        $PAGE->requires->js_init_call('M.block_mfavatar.init', [
-            $CFG->wwwroot . '/blocks/mfavatar/swf/snapshot.swf?' . time(),
-            $CFG->wwwroot . '/blocks/mfavatar/swf/expressInstall.swf',
+        $this->page->requires->js_init_call('M.block_mfavatar.init', [
             [
                 'sessionid' => $USER->sesskey,
                 'uploadPath' => $CFG->wwwroot . '/blocks/mfavatar/ajax.php',
@@ -73,21 +72,11 @@ class block_mfavatar_renderer extends plugin_renderer_base {
      * @return string
      * @throws coding_exception
      */
-    public function snapshot_tool() {
+    public function snapshot_tool() : string {
         // TODO Convert to mustache.
         global $USER, $CFG; // Used for the profile link.
 
-        $html = '<div id="snapshotholder" style="display: none;">
-                    <div id="snapshot">
-                        <h1>' . get_string('installflash', 'block_mfavatar') . '</h1>
-                        <p><a href="https://www.adobe.com/go/getflashplayer">
-                        <img src="https://www.adobe.com/images/shared/download_buttons/get_flash_player.gif"
-                        alt="Get Adobe Flash player" /></a></p>
-                    </div>
-                </div>';
-
-        // Add webrtc container.
-        $html .= '<div id="snapshotholder_webrtc" style="display: none;">
+        return '<div id="snapshotholder_webrtc" style="display: none;">
                     <video autoplay></video>
                     <div id="previewholder">
                         <canvas id="render"></canvas>
@@ -96,12 +85,10 @@ class block_mfavatar_renderer extends plugin_renderer_base {
                  </div>
                  <div class="pt-3 clearboth">
                     <button id="snapshot" class="btn btn-primary">' .
-            get_string('flash:text_make_snapshot', 'block_mfavatar') . '</button>
-                    <a href="' . $CFG->wwwroot . '/user/profile.php?id=' . $USER->id . '" class="btn btn-info">' .
-            get_string('returntoprofile', 'block_mfavatar') . '</a>
+                        get_string('flash:text_make_snapshot', 'block_mfavatar') . '</button>
+                                <a href="' . $CFG->wwwroot . '/user/profile.php?id=' . $USER->id . '" class="btn btn-info">' .
+                        get_string('returntoprofile', 'block_mfavatar') . '</a>
                  </div>';
-
-        return $html;
     }
 
 }

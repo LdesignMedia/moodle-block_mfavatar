@@ -42,6 +42,8 @@ defined('MOODLE_INTERNAL') || die;
 class update_avatars extends scheduled_task {
 
     /**
+     * Get name
+     *
      * @return string
      * @throws \coding_exception
      */

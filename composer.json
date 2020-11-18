@@ -1,5 +1,5 @@
 {
-  "name": "mfreak/moodle-block_mfavatar",
+  "name": "block/mfavatar",
   "description": "Mfreak Plugin Avatar gives the user the possibility to take a snapshot with a live webcam. The user can then upload the picture and modify his profile picture at any time. ",
   "license": "GNU General Public License",
   "authors": [
@@ -11,7 +11,7 @@
     }
   ],
   "require": {
-    "php": ">=7.0",
+    "php": ">=7.2",
     "laravolt/avatar": "^2.0",
     "danielstjules/stringy": "~3.1.0"
   }

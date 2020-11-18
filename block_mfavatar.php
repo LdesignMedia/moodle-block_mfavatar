@@ -35,17 +35,8 @@ class block_mfavatar extends block_base {
      *
      * @throws coding_exception
      */
-    public function init() {
+    public function init() : void {
         $this->title = get_string('pluginname', 'block_mfavatar');
-    }
-
-    /**
-     * instance_allow_multiple
-     *
-     * @return bool
-     */
-    public function instance_allow_multiple() {
-        return false;
     }
 
     /**
@@ -53,7 +44,7 @@ class block_mfavatar extends block_base {
      *
      * @return bool
      */
-    public function has_config() {
+    public function has_config() : bool {
         return true;
     }
 
@@ -62,7 +53,7 @@ class block_mfavatar extends block_base {
      *
      * @return array
      */
-    public function applicable_formats() {
+    public function applicable_formats() : array {
         return [
             'my' => true,
             'all' => true,
@@ -74,7 +65,7 @@ class block_mfavatar extends block_base {
      *
      * @return bool
      */
-    public function instance_allow_config() {
+    public function instance_allow_config() : bool {
         return true;
     }
 
@@ -83,7 +74,7 @@ class block_mfavatar extends block_base {
      *
      * @throws coding_exception
      */
-    public function specialization() {
+    public function specialization() : void {
 
         // Load userdefined title and make sure it's never empty.
         if (empty($this->config->title)) {

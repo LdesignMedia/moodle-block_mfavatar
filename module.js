@@ -32,7 +32,7 @@ M.block_mfavatar = {
      * @param options
      * @param supportwebrtc
      */
-    init: function(Y, applicationpath, expresspath, options) {
+    init: function(Y, options) {
 
 
         if (location.protocol != 'https:') {
@@ -142,10 +142,11 @@ M.block_mfavatar = {
             try {
                 var json = JSON.parse(response.response);
 
-                if (json.status == true) {
+                if (json.status) {
                     // Reload profile picture.
-                    M.block_mfavatar.saved();
+                    M.block_mfavatar.saved(json.img);
                 }
+
                 M.block_mfavatar.log(json);
             } catch (exc) {
                 console.log(exc);
@@ -173,17 +174,15 @@ M.block_mfavatar = {
     /**
      * Called when avatar is saved.
      */
-    saved: function() {
+    saved: function(srcimg) {
         this.log('Saved!!!');
-        var profilePicture = Y.one('img.profilepic');
+        var profilePicture = Y.one('img.userpicture');
         if (profilePicture) {
-            var src = profilePicture.getAttribute('src');
             profilePicture.setAttribute('src', '');
             setTimeout(function() {
                 var now = new Date().getTime() / 1000;
-                profilePicture.setAttribute('src', src + '&c=' + now);
+                profilePicture.setAttribute('src', srcimg + '&c=' + now);
             }, 500);
-
         }
     },
 
