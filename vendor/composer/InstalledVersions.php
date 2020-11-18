@@ -19,11 +19,20 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '4678813da5f101162221285920e6acd69ad899b3',
-    'name' => 'mfreak/moodle-block_mfavatar',
+    'reference' => '95197033a3fd79141bcd2a8436f08507f0006060',
+    'name' => 'block/mfavatar',
   ),
   'versions' => 
   array (
+    'block/mfavatar' => 
+    array (
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '95197033a3fd79141bcd2a8436f08507f0006060',
+    ),
     'danielstjules/stringy' => 
     array (
       'pretty_version' => '3.1.0',
@@ -95,15 +104,6 @@ private static $installed = array (
       array (
       ),
       'reference' => '58470dbbac0704772d87e775ac60dcd1580f022a',
-    ),
-    'mfreak/moodle-block_mfavatar' => 
-    array (
-      'pretty_version' => 'dev-master',
-      'version' => 'dev-master',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '4678813da5f101162221285920e6acd69ad899b3',
     ),
     'nesbot/carbon' => 
     array (
