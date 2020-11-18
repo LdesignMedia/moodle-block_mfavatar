@@ -27,6 +27,12 @@ defined('MOODLE_INTERNAL') || die;
 
 /**
  * Class block_mfavatar_renderer
+ *
+ * @license   https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ *
+ * @package   block_mfavatar
+ * @copyright 2015 MFreak.nl
+ * @author    Luuk Verhoeven
  */
 class block_mfavatar_renderer extends plugin_renderer_base {
 
