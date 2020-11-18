@@ -64,7 +64,6 @@ class block_mfavatar_renderer extends plugin_renderer_base {
                 'failed_saving' => get_string('flash:failed_saving', 'block_mfavatar'),
                 'success_saving' => get_string('flash:success_saving', 'block_mfavatar'),
             ],
-            $config->webrtc_enabled,
         ], false, $jsmodule);
     }
 

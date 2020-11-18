@@ -40,7 +40,7 @@ $PAGE->set_title(get_string('snapshotpage', 'block_mfavatar'));
 $PAGE->navbar->add(get_string('snapshotpage', 'block_mfavatar'));
 $PAGE->requires->css('/blocks/mfavatar/styles.css');
 
-/** @var block_mfavatar_renderer $renderer **/
+/** @var block_mfavatar_renderer $renderer * */
 $renderer = $PAGE->get_renderer('block_mfavatar');
 $renderer->add_javascript_module();
 

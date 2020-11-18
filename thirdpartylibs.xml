@@ -1,34 +1,6 @@
 <?xml version="1.0"?>
 <libraries>
     <library>
-        <location>swf/expressInstall.swf</location>
-        <name>expressInstall.swf</name>
-        <version></version>
-        <license>MIT</license>
-        <licenseversion></licenseversion>
-    </library>
-    <library>
-        <location>swf/snapshot.swf</location>
-        <name>snapshot.swf</name>
-        <version>1.0</version>
-        <license>MIT</license>
-        <licenseversion></licenseversion>
-    </library>
-    <library>
-        <location>js/swfobject.js</location>
-        <name>swfobject.js</name>
-        <version>2.2</version>
-        <license>MIT</license>
-        <licenseversion></licenseversion>
-    </library>
-    <library>
-        <location>source/</location>
-        <name>Snapshot swf application</name>
-        <version>1.0</version>
-        <license>MIT</license>
-        <licenseversion></licenseversion>
-    </library>
-    <library>
         <location>vendor/</location>
         <name>laravolt/avatar</name>
         <version>2.2.0</version>
