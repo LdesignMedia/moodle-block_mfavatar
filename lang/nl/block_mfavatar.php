@@ -46,3 +46,4 @@ $string['failed:sesskey'] = 'Fout: bent u nog steeds ingelogd? Herlaad de pagina
 $string['failed:permission_editownprofile'] = 'Fout: gebruikers kunnen hun afbeelding niet zelf bewerken.';
 $string['privacy:null_reason'] = 'Er worden geen gegevens opgeslagen door deze plugin.';
 $string['returntoprofile'] = 'Keer terug naar je profiel';
+

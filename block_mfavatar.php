@@ -125,3 +125,4 @@ class block_mfavatar extends block_base {
         return $this->content;
     }
 }
+

@@ -195,3 +195,4 @@ M.block_mfavatar = {
         M.block_mfavatar.log(err);
     }
 };
+

@@ -92,3 +92,4 @@ class block_mfavatar_renderer extends plugin_renderer_base {
     }
 
 }
+

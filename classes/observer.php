@@ -63,3 +63,4 @@ class observer {
         $avatargenerator->set_avatar_single_user($user);
     }
 }
+
