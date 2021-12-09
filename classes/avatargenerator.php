@@ -45,7 +45,7 @@ class avatargenerator {
      * @var array
      */
     protected $config = [
-        // Supported: "gd", "imagick".
+        // Supported: "gd" / "imagick".
         'driver' => 'gd',
 
         // Initial generator class.
