@@ -177,7 +177,7 @@ class avatargenerator {
     /**
      * Get new avatar object.
      *
-     * @param $string
+     * @param string $string
      *
      * @return Avatar
      */
