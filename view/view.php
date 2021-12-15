@@ -49,7 +49,7 @@ $renderer->add_javascript_module();
 echo $OUTPUT->header();
 
 if ($CFG->disableuserimages) {
-    print_error("disableuserimages", 'block_mfavatar');
+    throw new moodle_exception('disableuserimages', 'block_mfavatar');
 }
 
 echo $renderer->snapshot_tool();
