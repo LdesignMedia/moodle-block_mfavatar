@@ -1,45 +1,42 @@
-## Moodle MFavatar Snapshot/Webcam tool for user profile picture
+## Moodle - Block MFavatar
 
-Briefly, the Mfreak Plugin Avatar gives the user the possibility to take a snapshot with a live webcam. The user can then upload the picture and modify his profile picture at any time. Besides this, there is also the facility to auto generate Avatars. 
+[![CI Status](https://github.com/LdesignMedia/moodle-block_mfavatar/workflows/ci/badge.svg)](https://github.com/LdesignMedia/moodle-block_mfavatar/actions/workflows/ci.yml)
+
+A block plugin that gives users the ability to take a snapshot with a live webcam and set it as their profile picture. Also includes auto-generated avatar support.
 
 ## Author
-![MFreak.nl](https://MFreak.nl/logo_small.png)
+<img src="https://ldesignmedia.nl/themes/ldesignmedia/assets/images/logo/logo.svg" alt="ldesignmedia" height="70px">
 
-* Author: Luuk Verhoeven, [MFreak.nl](https://www.MFreak.nl/)
-* Min. required: Moodle 3.5.x
-* Supports PHP: 7.2 
+* Author: Luuk Verhoeven, [ldesignmedia.nl](https://ldesignmedia.nl/)
+* Min. required: Moodle 4.0
+* Supports PHP: 8.1+
 
-[![Build Status](https://travis-ci.org/MFreakNL/moodle-block_mfavatar.svg?branch=moodle35)](https://travis-ci.org/MFreakNL/moodle-block_mfavatar)
-![Moodle35](https://img.shields.io/badge/moodle-3.5-brightgreen.svg)
-![Moodle36](https://img.shields.io/badge/moodle-3.6-brightgreen.svg)
-![Moodle37](https://img.shields.io/badge/moodle-3.7-brightgreen.svg)
-![Moodle38](https://img.shields.io/badge/moodle-3.8-brightgreen.svg)
-![Moodle39](https://img.shields.io/badge/moodle-3.9-brightgreen.svg)
-![Moodle310](https://img.shields.io/badge/moodle-3.10-brightgreen.svg)
-![PHP7.2](https://img.shields.io/badge/PHP-7.2-brightgreen.svg)
+![Moodle400](https://img.shields.io/badge/moodle-4.0-F98012.svg?logo=moodle)
+![Moodle401](https://img.shields.io/badge/moodle-4.1-F98012.svg?logo=moodle)
+![Moodle402](https://img.shields.io/badge/moodle-4.2-F98012.svg?logo=moodle)
+![Moodle403](https://img.shields.io/badge/moodle-4.3-F98012.svg?logo=moodle)
+![Moodle404](https://img.shields.io/badge/moodle-4.4-F98012.svg?logo=moodle)
+![Moodle405](https://img.shields.io/badge/moodle-4.5-F98012.svg?logo=moodle)
+![Moodle500](https://img.shields.io/badge/moodle-5.0-F98012.svg?logo=moodle)
+![Moodle501](https://img.shields.io/badge/moodle-5.1-F98012.svg?logo=moodle)
 
+![PHP81](https://img.shields.io/badge/PHP-8.1-777BB4.svg?logo=php)
+![PHP82](https://img.shields.io/badge/PHP-8.2-777BB4.svg?logo=php)
 
 ## List of features
-- WebRTC, make snapshot with webcam. 
-- Flash, make snapshot with webcam. 
-- Feature for making automatically user avatars. Thanks to `laravolt/avatar`
-<!-- copy and paste. Modify height and width if desired. --> <a href="https://content.screencast.com/users/LuukVerhoeven/folders/Default/media/3cab1cd8-f5f0-448e-955d-ab8f3bc4cbb2/06.07.2018-18.36.png"><img class="embeddedObject" src="https://content.screencast.com/users/LuukVerhoeven/folders/Default/media/3cab1cd8-f5f0-448e-955d-ab8f3bc4cbb2/06.07.2018-18.36.png" width="500" border="0" /></a>
-
-## TODO 
-- Convert `ajax.php` to native ajax webservices
-- Gravatar support
-- Convert `module.js` to an AMD module
+- WebRTC, make snapshot with webcam
+- Feature for auto-generating user avatars (powered by `laravolt/avatar`)
 
 ## Installation
-1.  Copy this plugin to the `block\mfavatar` folder on the server
-2.  Login as administrator
-3.  Go to Site Administrator > Notification
-4.  Install the plugin
-5.  You will need to fill out the settings.
+1. Copy this plugin to the `blocks/mfavatar` folder on the server
+2. Login as administrator
+3. Go to Site Administrator > Notification
+4. Install the plugin
+5. You will need to fill out the settings
 
 ## Security
 
-If you discover any security related issues, please email [luuk@MFreak.nl](mailto:luuk@MFreak.nl) instead of using the issue tracker.
+If you discover any security related issues, please email [luuk@ldesignmedia.nl](mailto:luuk@ldesignmedia.nl) instead of using the issue tracker.
 
 ## License
 
@@ -49,11 +46,6 @@ The GNU GENERAL PUBLIC LICENSE. Please see [License File](LICENSE) for more info
 
 Contributions are welcome and will be fully credited. We accept contributions via Pull Requests on Github.
 
-
 ## Changelog
 
-- 2020111800 Tested in Moodle310 fix issues, update composer to use the latest dependencies.
-- 2020050900 Default capability set to user, fix configuration difficulties.  
-- 2020050900 Using WEBRTC as default, remove flash from this project.
-- 2018092600 Thanks for updating WEBRTC  @[eglescout](https://github.com/eglescout)
-- 2019051400 Thanks for solving issue in image override @[matasarei](https://github.com/matasarei)
+See [CHANGELOG.md](CHANGELOG.md) for a full list of changes.

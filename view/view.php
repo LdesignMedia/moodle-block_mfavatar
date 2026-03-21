@@ -24,9 +24,9 @@
  * @author    Luuk Verhoeven
  **/
 require_once(__DIR__ . '/../../../config.php');
-defined('MOODLE_INTERNAL') || die;
 
 require_login();
+require_capability('block/mfavatar:view', context_system::instance());
 
 $courseid = required_param('courseid', PARAM_INT);
 $parentcourse = $DB->get_record('course', ['id' => $courseid], '*', MUST_EXIST);
@@ -49,7 +49,7 @@ $renderer->add_javascript_module();
 echo $OUTPUT->header();
 
 if ($CFG->disableuserimages) {
-    throw new moodle_exception('disableuserimages', 'block_mfavatar');
+    throw new moodle_exception('failed:disableuserimages', 'block_mfavatar');
 }
 
 echo $renderer->snapshot_tool();

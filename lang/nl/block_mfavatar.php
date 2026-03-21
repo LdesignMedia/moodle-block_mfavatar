@@ -31,7 +31,6 @@ $string['mfavatar:view'] = 'Mfreak Avatar weergeven';
 $string['pluginname'] = 'Mfreak Avatar';
 $string['makesnapshot'] = 'Maak een webcam snapshot';
 $string['snapshotpage'] = 'Snapshot';
-$string['installflash'] = 'Installeer flash';
 
 $string['flash:textselectdevice'] = 'Selecteer uw camera';
 $string['flash:text_make_snapshot'] = 'Opslaan';

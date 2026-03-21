@@ -47,7 +47,7 @@ class update_avatars extends scheduled_task {
      * @return string
      * @throws \coding_exception
      */
-    public function get_name() {
+    public function get_name() : string {
         return get_string('task:update_avatars', 'block_mfavatar');
     }
 
@@ -57,16 +57,14 @@ class update_avatars extends scheduled_task {
      *
      * @throws \dml_exception
      */
-    public function execute() {
+    public function execute() : void {
 
         $enabled = get_config('block_mfavatar', 'avatar_initials');
         if (empty($enabled)) {
-            return true;
+            return;
         }
 
         $avatargenerator = new avatargenerator();
         $avatargenerator->set_avatar_for_all_users();
-
-        return true;
     }
 }

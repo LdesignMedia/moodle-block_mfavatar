@@ -39,31 +39,22 @@ class block_mfavatar_renderer extends plugin_renderer_base {
     /**
      * add_javascript_module
      *
+     * Loads the AMD module block_mfavatar/mfavatar and passes the options
+     * required for webcam initialisation and AJAX upload.
+     *
      * @throws coding_exception
      * @throws dml_exception
      * @throws moodle_exception
      */
     public function add_javascript_module() : void {
-        global $CFG, $USER;
+        global $CFG;
 
-        $jsmodule = [
-            'name' => 'block_mfavatar',
-            'fullpath' => '/blocks/mfavatar/module.js',
-            'requires' => ['io-base'],
+        $options = [
+            'sessionid' => sesskey(),
+            'uploadPath' => $CFG->wwwroot . '/blocks/mfavatar/ajax.php',
         ];
 
-        $this->page->requires->js_init_call('M.block_mfavatar.init', [
-            [
-                'sessionid' => $USER->sesskey,
-                'uploadPath' => $CFG->wwwroot . '/blocks/mfavatar/ajax.php',
-                'text_select_device' => get_string('flash:textselectdevice', 'block_mfavatar'),
-                'text_make_snapshot' => get_string('flash:text_make_snapshot', 'block_mfavatar'),
-                'text_result_field' => get_string('flash:text_result_field', 'block_mfavatar'),
-                'text_feed_field' => get_string('flash:text_feed_field', 'block_mfavatar'),
-                'failed_saving' => get_string('flash:failed_saving', 'block_mfavatar'),
-                'success_saving' => get_string('flash:success_saving', 'block_mfavatar'),
-            ],
-        ], false, $jsmodule);
+        $this->page->requires->js_call_amd('block_mfavatar/mfavatar', 'init', [$options]);
     }
 
     /**
@@ -77,16 +68,15 @@ class block_mfavatar_renderer extends plugin_renderer_base {
         global $USER, $CFG; // Used for the profile link.
 
         return '<div id="snapshotholder_webrtc" style="display: none;">
-                    <video autoplay></video>
+                    <video id="video_webrtc" autoplay></video>
                     <div id="previewholder">
-                        <canvas id="render"></canvas>
-                        <canvas id="preview"></canvas>
+                        <canvas id="canvas_webrtc"></canvas>
                     </div>
                  </div>
                  <div class="pt-3 clearboth">
-                    <button id="snapshot" class="btn btn-primary">' .
+                    <button id="snapshot_btn" class="btn btn-primary">' .
                         get_string('flash:text_make_snapshot', 'block_mfavatar') . '</button>
-                                <a href="' . $CFG->wwwroot . '/user/profile.php?id=' . $USER->id . '" class="btn btn-info">' .
+                    <a href="' . $CFG->wwwroot . '/user/profile.php?id=' . s($USER->id) . '" class="btn btn-info">' .
                         get_string('returntoprofile', 'block_mfavatar') . '</a>
                  </div>';
     }

@@ -87,14 +87,12 @@ class block_mfavatar extends block_base {
     /**
      * get_content
      *
-     * @return stdClass|stdObject
+     * @return stdClass|null
      * @throws coding_exception
      * @throws dml_exception
      */
-    public function get_content() {
+    public function get_content() : ?stdClass {
         global $CFG, $COURSE;
-
-        require_once($CFG->libdir . '/formslib.php');
 
         if ($this->content !== null) {
             return $this->content;
@@ -113,10 +111,10 @@ class block_mfavatar extends block_base {
         $this->content->text = '<div class="singlebutton">
                                     <form action="' . $CFG->wwwroot . '/blocks/mfavatar/view/view.php" method="get">
                                       <div>
-                                        <input type="hidden" name="blockid" value="' . $this->instance->id . '"/>
-                                        <input type="hidden" name="courseid" value="' . $COURSE->id . '"/>
+                                        <input type="hidden" name="blockid" value="' . s($this->instance->id) . '"/>
+                                        <input type="hidden" name="courseid" value="' . s($COURSE->id) . '"/>
                                         <input class="singlebutton btn btn-primary" type="submit" value="' .
-            get_string('makesnapshot', 'block_mfavatar') . '"/>
+            s(get_string('makesnapshot', 'block_mfavatar')) . '"/>
                                       </div>
                                     </form>
                                   </div>';

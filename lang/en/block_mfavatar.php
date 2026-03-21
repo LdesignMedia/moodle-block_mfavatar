@@ -32,7 +32,6 @@ $string['mfavatar:view'] = 'View Mfavatar';
 $string['pluginname'] = 'Mfreak Avatar';
 $string['makesnapshot'] = 'Make Snapshot';
 $string['snapshotpage'] = 'Snapshot';
-$string['installflash'] = 'Please install flash';
 
 $string['flash:textselectdevice'] = 'Please select your camera device:';
 $string['flash:text_make_snapshot'] = 'Save snapshot';
@@ -41,7 +40,7 @@ $string['flash:text_result_field'] = 'Your result';
 $string['flash:failed_saving'] = 'Error saving your snapshot!!';
 $string['flash:success_saving'] = 'Snapshot saved!!!';
 
-$string['failed:disableuserimages'] = 'Error: Site has disabeld user images';
+$string['failed:disableuserimages'] = 'Error: Site has disabled user images';
 $string['failed'] = 'Error: Failed Uploading';
 $string['failed:sesskey'] = 'Error: failed saving you are still logged? Refresh the page and retry';
 $string['failed:permission_editownprofile'] = 'Error: User can\'t change their images';

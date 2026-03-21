@@ -45,7 +45,7 @@ $capabilities = [
         'clonepermissionsfrom' => 'moodle/site:manageblocks',
     ],
     'block/mfavatar:view' => [
-        'captype' => 'write',
+        'captype' => 'read',
         'contextlevel' => CONTEXT_BLOCK,
         'archetypes' => [
             'user' => CAP_ALLOW,

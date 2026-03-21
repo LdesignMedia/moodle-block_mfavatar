@@ -127,7 +127,7 @@ class avatargenerator {
         require_once("$CFG->libdir/gdlib.php");
         $this->avatar = new Avatar($this->config);
 
-        $override = get_config(__NAMESPACE__, 'avatar_initials_forced');
+        $override = get_config('block_mfavatar', 'avatar_initials_forced');
         $this->overrideavatar = !empty($override);
     }
 
@@ -139,7 +139,7 @@ class avatargenerator {
      *
      * @throws \dml_exception
      */
-    public function set_avatar_single_user($user, $parts = 'fullname') {
+    public function set_avatar_single_user($user, $parts = 'fullname') : void {
         switch ($parts) {
             default:
                 // Fullname.
@@ -154,7 +154,7 @@ class avatargenerator {
      *
      * @throws \dml_exception
      */
-    public function set_avatar_for_all_users($parts = 'fullname') {
+    public function set_avatar_for_all_users($parts = 'fullname') : void {
 
         global $DB;
         $params = [
@@ -162,7 +162,7 @@ class avatargenerator {
         ];
 
         if (empty($this->overrideavatar)) {
-            $params['picture'] = ''; // Must be empty.
+            $params['picture'] = 0; // Must be empty/unset (0 means no custom picture).
         }
 
         $rs = $DB->get_recordset('user', $params);
@@ -193,7 +193,7 @@ class avatargenerator {
      *
      * @throws \dml_exception
      */
-    protected function save(stdClass $user, Avatar $avatar) {
+    protected function save(stdClass $user, Avatar $avatar) : void {
         global $DB;
 
         $context = context_user::instance($user->id, MUST_EXIST);
