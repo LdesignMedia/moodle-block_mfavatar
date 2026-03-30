@@ -35,7 +35,6 @@ defined('MOODLE_INTERNAL') || die;
  * @author    Luuk Verhoeven
  */
 class block_mfavatar_renderer extends plugin_renderer_base {
-
     /**
      * add_javascript_module
      *

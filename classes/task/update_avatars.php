@@ -40,14 +40,13 @@ defined('MOODLE_INTERNAL') || die;
  *
  */
 class update_avatars extends scheduled_task {
-
     /**
      * Get name
      *
      * @return string
      * @throws \coding_exception
      */
-    public function get_name() : string {
+    public function get_name(): string {
         return get_string('task:update_avatars', 'block_mfavatar');
     }
 
@@ -57,7 +56,7 @@ class update_avatars extends scheduled_task {
      *
      * @throws \dml_exception
      */
-    public function execute() : void {
+    public function execute(): void {
 
         $enabled = get_config('block_mfavatar', 'avatar_initials');
         if (empty($enabled)) {
