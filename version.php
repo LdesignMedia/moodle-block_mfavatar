@@ -20,13 +20,14 @@
  * @license   https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  * @package   block_mfavatar
- * @copyright 2015 MFreak.nl
+ * @copyright 2015 MFreak.nl | LdesignMedia.nl
  * @author    Luuk Verhoeven
  **/
 
 defined('MOODLE_INTERNAL') || die;
-$plugin->release = '3.11.0';
+$plugin->release = '5.1.0';
 $plugin->maturity = MATURITY_STABLE;
-$plugin->version = 2021121500;        // The current plugin version (Date: YYYYMMDDXX).
-$plugin->requires = 2018051700;        // Requires this Moodle 3.5 version.
-$plugin->component = 'block_mfavatar'; // Full name of the plugin (used for diagnostics).
+$plugin->version = 2026032100;
+$plugin->requires = 2022041900;
+$plugin->component = 'block_mfavatar';
+$plugin->supported = [400, 501];

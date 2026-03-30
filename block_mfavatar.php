@@ -35,7 +35,7 @@ class block_mfavatar extends block_base {
      *
      * @throws coding_exception
      */
-    public function init() : void {
+    public function init(): void {
         $this->title = get_string('pluginname', 'block_mfavatar');
     }
 
@@ -44,7 +44,7 @@ class block_mfavatar extends block_base {
      *
      * @return bool
      */
-    public function has_config() : bool {
+    public function has_config(): bool {
         return true;
     }
 
@@ -53,7 +53,7 @@ class block_mfavatar extends block_base {
      *
      * @return array
      */
-    public function applicable_formats() : array {
+    public function applicable_formats(): array {
         return [
             'my' => true,
             'all' => true,
@@ -65,7 +65,7 @@ class block_mfavatar extends block_base {
      *
      * @return bool
      */
-    public function instance_allow_config() : bool {
+    public function instance_allow_config(): bool {
         return true;
     }
 
@@ -74,7 +74,7 @@ class block_mfavatar extends block_base {
      *
      * @throws coding_exception
      */
-    public function specialization() : void {
+    public function specialization(): void {
 
         // Load userdefined title and make sure it's never empty.
         if (empty($this->config->title)) {
@@ -87,14 +87,12 @@ class block_mfavatar extends block_base {
     /**
      * get_content
      *
-     * @return stdClass|stdObject
+     * @return stdClass|null
      * @throws coding_exception
      * @throws dml_exception
      */
-    public function get_content() {
+    public function get_content(): ?stdClass {
         global $CFG, $COURSE;
-
-        require_once($CFG->libdir . '/formslib.php');
 
         if ($this->content !== null) {
             return $this->content;
@@ -113,10 +111,10 @@ class block_mfavatar extends block_base {
         $this->content->text = '<div class="singlebutton">
                                     <form action="' . $CFG->wwwroot . '/blocks/mfavatar/view/view.php" method="get">
                                       <div>
-                                        <input type="hidden" name="blockid" value="' . $this->instance->id . '"/>
-                                        <input type="hidden" name="courseid" value="' . $COURSE->id . '"/>
+                                        <input type="hidden" name="blockid" value="' . s($this->instance->id) . '"/>
+                                        <input type="hidden" name="courseid" value="' . s($COURSE->id) . '"/>
                                         <input class="singlebutton btn btn-primary" type="submit" value="' .
-            get_string('makesnapshot', 'block_mfavatar') . '"/>
+            s(get_string('makesnapshot', 'block_mfavatar')) . '"/>
                                       </div>
                                     </form>
                                   </div>';
@@ -125,4 +123,3 @@ class block_mfavatar extends block_base {
         return $this->content;
     }
 }
-

@@ -38,7 +38,6 @@ defined('MOODLE_INTERNAL') || die;
  * @author    Luuk Verhoeven
  */
 class observer {
-
     /**
      * User updated
      *
@@ -46,7 +45,7 @@ class observer {
      *
      * @throws \dml_exception
      */
-    public static function user_updated(\core\event\user_updated $event) : void {
+    public static function user_updated(\core\event\user_updated $event): void {
 
         if (empty(get_config('block_mfavatar', 'avatar_initials')) || empty($event->userid)) {
             return;
@@ -63,4 +62,3 @@ class observer {
         $avatargenerator->set_avatar_single_user($user);
     }
 }
-

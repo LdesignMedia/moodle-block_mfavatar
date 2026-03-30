@@ -28,7 +28,6 @@ define('AJAX_SCRIPT', true);
 define('NO_DEBUG_DISPLAY', true);
 
 require_once(__DIR__ . '/../../config.php');
-defined('MOODLE_INTERNAL') || die;
 
 require_once("$CFG->libdir/gdlib.php");
 $PAGE->set_url('/blocks/mfavatar/upload.php');
@@ -39,23 +38,15 @@ $sessionid = required_param('sesskey', PARAM_RAW);
 $systemcontext = context_system::instance();
 $array = ['errors' => [], 'status' => false];
 
-echo $OUTPUT->header(); // Send headers.
-
 if ($CFG->disableuserimages) {
-
     $array['errors'][] = get_string('failed:disableuserimages', 'block_mfavatar');
-
 } else if (!has_capability('moodle/user:editownprofile', $systemcontext)) {
-
     $array['errors'][] = get_string('failed:permission_editownprofile', 'block_mfavatar');
-
 } else if (!confirm_sesskey($sessionid)) {
-
     $array['errors'][] = get_string('failed:sesskey', 'block_mfavatar');
 }
 
 if (empty($array['errors'])) {
-
     if (stristr($file, 'base64,')) {
         // Convert webrtc.
         $file = explode('base64,', $file);
@@ -67,7 +58,8 @@ if (empty($array['errors'])) {
 
     if (empty($file)) {
         $array['errors'][] = get_string('failed', 'block_mfavatar');
-        die(json_encode($array));
+        echo json_encode($array);
+        exit;
     }
 
     $context = context_user::instance($USER->id, MUST_EXIST);

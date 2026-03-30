@@ -31,7 +31,6 @@ $string['mfavatar:view'] = 'Mfreak Avatar weergeven';
 $string['pluginname'] = 'Mfreak Avatar';
 $string['makesnapshot'] = 'Maak een webcam snapshot';
 $string['snapshotpage'] = 'Snapshot';
-$string['installflash'] = 'Installeer flash';
 
 $string['flash:textselectdevice'] = 'Selecteer uw camera';
 $string['flash:text_make_snapshot'] = 'Opslaan';
@@ -46,4 +45,3 @@ $string['failed:sesskey'] = 'Fout: bent u nog steeds ingelogd? Herlaad de pagina
 $string['failed:permission_editownprofile'] = 'Fout: gebruikers kunnen hun afbeelding niet zelf bewerken.';
 $string['privacy:null_reason'] = 'Er worden geen gegevens opgeslagen door deze plugin.';
 $string['returntoprofile'] = 'Keer terug naar je profiel';
-
