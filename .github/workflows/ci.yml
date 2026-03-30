@@ -9,5 +9,6 @@ jobs:
       moodle_org_token: ${{ secrets.MOODLE_ORG_TOKEN }}
     with:
       disable_grunt: false
+      disable_phpunit: true
       disable_release: false
       release_branches: main
