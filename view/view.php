@@ -22,7 +22,8 @@
  * @package   block_mfavatar
  * @copyright 2015 MFreak.nl
  * @author    Luuk Verhoeven
- **/
+ */
+
 require_once(__DIR__ . '/../../../config.php');
 
 require_login();

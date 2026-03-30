@@ -40,7 +40,6 @@ use stdClass;
  * @copyright 2018 MFreak.nl
  */
 class avatargenerator {
-
     /**
      * @var array
      */
@@ -139,7 +138,7 @@ class avatargenerator {
      *
      * @throws \dml_exception
      */
-    public function set_avatar_single_user($user, $parts = 'fullname') : void {
+    public function set_avatar_single_user($user, $parts = 'fullname'): void {
         switch ($parts) {
             default:
                 // Fullname.
@@ -154,7 +153,7 @@ class avatargenerator {
      *
      * @throws \dml_exception
      */
-    public function set_avatar_for_all_users($parts = 'fullname') : void {
+    public function set_avatar_for_all_users($parts = 'fullname'): void {
 
         global $DB;
         $params = [
@@ -181,7 +180,7 @@ class avatargenerator {
      *
      * @return Avatar
      */
-    protected function get_avatar(string $string) : Avatar {
+    protected function get_avatar(string $string): Avatar {
         return $this->avatar->create($string);
     }
 
@@ -193,7 +192,7 @@ class avatargenerator {
      *
      * @throws \dml_exception
      */
-    protected function save(stdClass $user, Avatar $avatar) : void {
+    protected function save(stdClass $user, Avatar $avatar): void {
         global $DB;
 
         $context = context_user::instance($user->id, MUST_EXIST);
@@ -212,5 +211,4 @@ class avatargenerator {
         // Remove temp.
         @unlink($tempfile);
     }
-
 }

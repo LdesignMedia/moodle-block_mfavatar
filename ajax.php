@@ -39,20 +39,14 @@ $systemcontext = context_system::instance();
 $array = ['errors' => [], 'status' => false];
 
 if ($CFG->disableuserimages) {
-
     $array['errors'][] = get_string('failed:disableuserimages', 'block_mfavatar');
-
 } else if (!has_capability('moodle/user:editownprofile', $systemcontext)) {
-
     $array['errors'][] = get_string('failed:permission_editownprofile', 'block_mfavatar');
-
 } else if (!confirm_sesskey($sessionid)) {
-
     $array['errors'][] = get_string('failed:sesskey', 'block_mfavatar');
 }
 
 if (empty($array['errors'])) {
-
     if (stristr($file, 'base64,')) {
         // Convert webrtc.
         $file = explode('base64,', $file);
