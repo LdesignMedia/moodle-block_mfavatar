@@ -21,7 +21,7 @@
  *
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
- * @package   block_mfavatar
+ * @package
  * @copyright 21/03/2026 Mfreak.nl | LdesignMedia.nl - Luuk Verhoeven
  * @author    Luuk Verhoeven
  */

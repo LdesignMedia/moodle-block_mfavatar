@@ -46,7 +46,7 @@ class block_mfavatar_renderer extends plugin_renderer_base {
      * @throws dml_exception
      * @throws moodle_exception
      */
-    public function add_javascript_module() : void {
+    public function add_javascript_module(): void {
         global $CFG;
 
         $options = [
@@ -63,7 +63,7 @@ class block_mfavatar_renderer extends plugin_renderer_base {
      * @return string
      * @throws coding_exception
      */
-    public function snapshot_tool() : string {
+    public function snapshot_tool(): string {
         // TODO Convert to mustache.
         global $USER, $CFG; // Used for the profile link.
 
@@ -80,6 +80,4 @@ class block_mfavatar_renderer extends plugin_renderer_base {
                         get_string('returntoprofile', 'block_mfavatar') . '</a>
                  </div>';
     }
-
 }
-
