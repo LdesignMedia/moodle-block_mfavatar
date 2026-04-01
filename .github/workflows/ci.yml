@@ -11,4 +11,4 @@ jobs:
       disable_grunt: false
       disable_phpunit: true
       disable_release: false
-      release_branches: main
+      release_branches: master
