@@ -29,7 +29,6 @@ defined('MOODLE_INTERNAL') || die;
  * Class block_mfavatar
  */
 class block_mfavatar extends block_base {
-
     /**
      * init
      *
@@ -99,8 +98,10 @@ class block_mfavatar extends block_base {
         }
 
         $systemcontext = context_system::instance();
-        if ((!isloggedin() || isguestuser() || !has_capability('block/mfavatar:view', $systemcontext)) ||
-            !has_capability('moodle/user:editownprofile', $systemcontext) || $CFG->disableuserimages) {
+        if (
+            (!isloggedin() || isguestuser() || !has_capability('block/mfavatar:view', $systemcontext)) ||
+            !has_capability('moodle/user:editownprofile', $systemcontext) || $CFG->disableuserimages
+        ) {
             $this->content = new stdClass();
             $this->content->text = '';
 
