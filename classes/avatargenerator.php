@@ -20,7 +20,7 @@
  * @license   https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  * @package   block_mfavatar
- * @copyright 2018 MFreak.nl
+ * @copyright 2018 MFreak.nl | LdesignMedia.nl
  * @author    Luuk Verhoeven
  **/
 
@@ -37,7 +37,7 @@ use stdClass;
  *
  * @package   block_mfavatar
  * @license   https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- * @copyright 2018 MFreak.nl
+ * @copyright 2018 MFreak.nl | LdesignMedia.nl
  */
 class avatargenerator {
     /**
@@ -110,7 +110,6 @@ class avatargenerator {
 
     /**
      * Allow overriding user picture.
-     *
      * @var bool
      */
     protected $overrideavatar = false;
@@ -160,12 +159,11 @@ class avatargenerator {
             'deleted' => 0,
         ];
 
-        if (empty($this->overrideavatar)) {
-            $params['picture'] = 0; // Must be empty/unset (0 means no custom picture).
+        if (!$this->overrideavatar) {
+            $params['picture'] = 0;
         }
 
-        $rs = $DB->get_recordset('user', $params);
-
+        $rs = $DB->get_recordset('user', $params, '', 'id,picture,email');
         foreach ($rs as $user) {
             $this->set_avatar_single_user($user, $parts);
         }
@@ -195,8 +193,16 @@ class avatargenerator {
     protected function save(stdClass $user, Avatar $avatar): void {
         global $DB;
 
-        $context = context_user::instance($user->id, MUST_EXIST);
+        // Skip if Gravatar is enabled and user has a Gravatar.
+        if (
+            $this->gravatar_enabled() &&
+            $this->user_has_gravatar($user) &&
+            !$this->overrideavatar
+        ) {
+            return;
+        }
 
+        $context = context_user::instance($user->id, MUST_EXIST);
         $tempfile = tempnam(sys_get_temp_dir(), 'mfavatar') . '.png';
 
         // Save to temp.
@@ -210,5 +216,34 @@ class avatargenerator {
 
         // Remove temp.
         @unlink($tempfile);
+    }
+
+    /**
+     * Check if Gravatar is enabled in Moodle.
+     *
+     * @return bool
+     */
+    private function gravatar_enabled(): bool {
+        global $CFG;
+
+        return !empty($CFG->enablegravatar);
+    }
+
+    /**
+     * Check if user has a Gravatar.
+     *
+     * @param stdClass $user
+     *
+     * @return bool
+     */
+    private function user_has_gravatar(stdClass $user): bool {
+        $hash = md5(strtolower(trim($user->email)));
+        $uri = 'https://www.gravatar.com/avatar/' . $hash . '?d=404';
+        $headers = @get_headers($uri);
+        if (!preg_match("|200|", $headers[0])) {
+            return false;
+        }
+
+        return true;
     }
 }
